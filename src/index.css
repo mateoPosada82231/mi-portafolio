@@ -9,8 +9,14 @@
   scroll-behavior: smooth;
 }
 
+html {
+  overflow-x: hidden; /* Previene el desbordamiento por la animación */
+}
+
 body {
   margin: 0;
+  position: relative; /* Necesario para el pseudo-elemento */
+  z-index: 1;
 }
 
 /* Tema Oscuro (por defecto) */
@@ -21,17 +27,14 @@ body {
   --primary-color: #3b82f6; /* Un cian brillante para acentos */
   --primary-hover-color: #a7ffeb;
   --border-color: #233554; /* Borde azul oscuro */
+  --accent-purple: #9333ea; /* Nuevo color para un acento vibrante */
   
   background-color: var(--background-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
-  
-  /* Animación de fondo mejorada */
-  background-image: radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.1), transparent 40%),
-                    radial-gradient(circle at 85% 30%, rgba(167, 255, 235, 0.1), transparent 40%);
-  animation: backgroundFloat 20s ease-in-out infinite;
 }
 
+/* Eliminamos la animación de fondo anterior del body */
 @keyframes backgroundFloat {
   0%, 100% {
     background-position: 0% 50%, 100% 50%;
@@ -39,6 +42,30 @@ body {
   50% {
     background-position: 100% 50%, 0% 50%;
   }
+}
+
+/* --- Nueva Animación de Fondo Espectacular (Efecto Aurora) --- */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1; /* Lo colocamos detrás de todo el contenido */
+  
+  /* Múltiples gradientes para un efecto rico y complejo */
+  background: 
+    radial-gradient(circle at 20% 30%, var(--primary-color), transparent 35%),
+    radial-gradient(circle at 80% 70%, var(--accent-purple), transparent 35%),
+    radial-gradient(circle at 50% 90%, var(--primary-hover-color), transparent 40%);
+
+  background-size: 300% 300%; /* Hacemos los gradientes enormes */
+  
+  /* Difuminamos y saturamos para el efecto de aurora */
+  filter: blur(100px) saturate(150%);
+  opacity: 0.4; /* Controla la intensidad general del efecto */
+  animation: none; /* Desactivamos la animación del body */
 }
 
 /* Eliminar estilos base que ya no son necesarios */
