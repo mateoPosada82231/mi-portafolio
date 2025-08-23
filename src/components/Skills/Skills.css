@@ -1,65 +1,99 @@
 .skills-section {
   padding: 100px 50px;
   background: var(--section-background-color);
-  text-align: center;
-  overflow: hidden;
+  color: var(--text-color);
 }
 
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 4rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  gap: 40px;
+  margin-top: 50px;
 }
 
 .skill-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+  text-align: center;
+  animation: zoomIn 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.skill-circle {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 15px;
+}
+
+.skill-circle svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.skill-circle .circle-bg {
+  fill: none;
+  stroke: #334155;
+  stroke-width: 10;
+}
+
+.skill-circle .circle-progress {
+  fill: none;
+  stroke: var(--primary-color);
+  stroke-width: 10;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s ease-out;
 }
 
 .skill-logo {
-  width: 45%; /* Ajuste para que quepa mejor */
-  height: 45%; /* Ajuste para que quepa mejor */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
 
 .skill-item:hover .skill-logo {
-  transform: scale(1.1);
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 .skill-name {
   font-size: 1.2rem;
-  font-weight: 500;
+  margin-bottom: 5px;
   color: var(--text-color);
+  font-weight: 500;
 }
 
 .skill-level {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--primary-color);
   font-weight: bold;
 }
 
-/* Estilos para el contenedor del logo dentro del círculo */
-.CircularProgressbar-background {
-  fill: var(--section-background-color);
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-.CircularProgressbar .CircularProgressbar-trail {
-  stroke: var(--border-color);
-}
-
-/* Eliminamos la regla conflictiva de .CircularProgressbar-path */
-
-/* Centramos el logo dentro del círculo */
-.CircularProgressbar .CircularProgressbar-text {
-  fill: var(--text-color); /* No afecta a la imagen, pero es buena práctica */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  transform: translateY(-5px); /* Pequeño ajuste vertical */
-}
+/* Animación escalonada para los items */
+.skills-grid .skill-item:nth-child(1) { animation-delay: 0.1s; }
+.skills-grid .skill-item:nth-child(2) { animation-delay: 0.2s; }
+.skills-grid .skill-item:nth-child(3) { animation-delay: 0.3s; }
+.skills-grid .skill-item:nth-child(4) { animation-delay: 0.4s; }
+.skills-grid .skill-item:nth-child(5) { animation-delay: 0.5s; }
+.skills-grid .skill-item:nth-child(6) { animation-delay: 0.6s; }
+.skills-grid .skill-item:nth-child(7) { animation-delay: 0.7s; }
+.skills-grid .skill-item:nth-child(8) { animation-delay: 0.8s; }
+.skills-grid .skill-item:nth-child(9) { animation-delay: 0.9s; }
+.skills-grid .skill-item:nth-child(10) { animation-delay: 1.0s; }
+.skills-grid .skill-item:nth-child(11) { animation-delay: 1.1s; }
+.skills-grid .skill-item:nth-child(12) { animation-delay: 1.2s; }
+.skills-grid .skill-item:nth-child(13) { animation-delay: 1.3s; }

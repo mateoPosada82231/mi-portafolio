@@ -2,8 +2,8 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './Skills.css';
 import Skill from './Skill';
-import AnimatedSection from '../animations/AnimatedSection';
-// ... (tus importaciones de logos)
+
+// Importa tus logos de skills
 import reactLogo from '../../assets/react-2.svg';
 import jsLogo from '../../assets/javascript-2.svg';
 import htmlLogo from '../../assets/html.svg';
@@ -39,16 +39,10 @@ const Skills = () => {
 
   return (
     <section id="skills" className="skills-section">
-      <AnimatedSection animationClass="fade-in">
-        <h2 className="section-title">{t('skills_title')}</h2>
-      </AnimatedSection>
+      <h2 className="section-title">{t('skills_title')}</h2>
       <div className="skills-grid">
-        {skillsData.map((skill, index) => (
-          <AnimatedSection key={skill.name} animationClass="fade-in">
-            <div style={{ transitionDelay: `${index * 100}ms` }}>
-              <Skill {...skill} />
-            </div>
-          </AnimatedSection>
+        {skillsData.map((skill) => (
+          <Skill key={skill.name} {...skill} />
         ))}
       </div>
     </section>
