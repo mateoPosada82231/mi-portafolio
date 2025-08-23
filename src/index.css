@@ -26,75 +26,19 @@ body {
   position: relative;
 }
 
-/* --- Animación de Tormenta con CSS --- */
-
-/* Capa de Lluvia */
-@keyframes rain {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(100%); }
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 200%;
-  z-index: -2;
-  background-image: 
-    linear-gradient(transparent, var(--storm-bg) 80%),
-    repeating-linear-gradient(
-      -25deg,
-      transparent,
-      transparent 2px,
-      rgba(165, 180, 252, 0.1) 2px,
-      rgba(165, 180, 252, 0.1) 4px
-    );
-  animation: rain 0.7s linear infinite;
-}
-
-/* Capa de Relámpago */
-@keyframes lightning {
-  0%, 100% { opacity: 0; }
-  40% { opacity: 0; }
-  41% { opacity: 0.6; }
-  42% { opacity: 0.1; }
-  43% { opacity: 0.8; }
-  45% { opacity: 0; }
-}
-
-body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background: radial-gradient(ellipse at center, var(--accent-color) 0%, transparent 70%);
-  animation: lightning 10s linear infinite;
-  opacity: 0;
-}
-
-main {
-  position: relative;
-  z-index: 1; /* Asegura que el contenido esté sobre la tormenta */
-}
-
-/* Estilos generales para las secciones */
 section {
-  padding: 100px 50px;
+  padding: 80px 50px; /* Reducimos un poco el padding vertical */
   background-color: var(--section-bg);
-  border-bottom: 1px solid var(--border-color);
+  /* Eliminamos el border-bottom para una transición más suave */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+.section-title {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 50px;
+  text-align: center;
 }
 
 /* Animación para texto con gradiente */

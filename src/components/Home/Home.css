@@ -6,7 +6,7 @@
     gap: 2rem;
     background-color: transparent !important; /* La sección Home es totalmente transparente */
     backdrop-filter: none !important;
-    border-bottom: 1px solid var(--border-color);
+    /* Eliminamos el borde que la separaba de la siguiente sección */
   }
   
   .home-content {

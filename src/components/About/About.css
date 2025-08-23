@@ -3,12 +3,7 @@
   text-align: center;
 }
 
-.section-title {
-  font-size: 3rem;
-  color: #3b82f6;
-  margin-bottom: 50px;
-  animation: fadeInDown 1s ease-out;
-}
+/* El estilo .section-title se ha movido a index.css para ser global */
 
 .about-content {
   display: flex;
@@ -42,16 +37,7 @@
   line-height: 1.8;
 }
 
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* La animación fadeInDown se ha movido a index.css junto con .section-title */
 
 @keyframes fadeInUp {
   from {

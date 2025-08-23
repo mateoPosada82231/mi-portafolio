@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import './Navbar.css';
+import { FaVideo, FaVideoSlash } from 'react-icons/fa';
 
-const Navbar = () => {
+const Navbar = ({ videoEnabled, toggleVideo }) => {
   const { t, i18n } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -38,6 +39,11 @@ const Navbar = () => {
             <button className="lang-btn" onClick={() => handleLanguageChange('en')}>EN</button>
           </li>
         </ul>
+        <div className="nav-controls">
+          <button onClick={toggleVideo} className="video-toggle-btn" aria-label="Toggle video background">
+            {videoEnabled ? <FaVideo /> : <FaVideoSlash />}
+          </button>
+        </div>
       </div>
     </nav>
   );
