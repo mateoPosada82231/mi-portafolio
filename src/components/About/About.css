@@ -2,15 +2,14 @@
     padding: 100px 50px;
     background: var(--section-background-color);
     color: var(--text-color);
-    transition: background 0.5s, color 0.5s;
+    overflow: hidden; /* Para que las animaciones no generen scroll horizontal */
   }
   
   .section-title {
     text-align: center;
     font-size: 3rem;
-    color: #3b82f6;
+    color: var(--primary-color);
     margin-bottom: 50px;
-    animation: fadeInDown 1s ease-out;
   }
   
   .about-content {
@@ -18,7 +17,6 @@
     align-items: center;
     justify-content: center;
     gap: 50px;
-    animation: fadeInUp 1s ease-out;
   }
   
   .about-image {
@@ -30,41 +28,20 @@
     height: 300px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid #3b82f6;
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
-    transition: transform 0.3s ease;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 0 25px rgba(100, 255, 218, 0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
   }
   
   .about-image img:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 35px rgba(100, 255, 218, 0.5);
   }
   
   .about-text {
     max-width: 600px;
     font-size: 1.1rem;
     line-height: 1.8;
-  }
-  
-  @keyframes fadeInDown {
-    from {
-      opacity: 0;
-      transform: translateY(-50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
   
   @media (max-width: 768px) {

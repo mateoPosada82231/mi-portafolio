@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import './Projects.css';
 import ProjectModal from './ProjectModal';
+import AnimatedSection from '../animations/AnimatedSection';
 
 // Importa tus imágenes de proyectos
 import proj1 from '../../assets/proj1.png';
@@ -37,49 +43,42 @@ const projectsData = [
 
 const Projects = () => {
   const { t } = useTranslation();
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [modalData, setModalData] = useState(null);
-
-  const nextProject = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % projectsData.length);
-  };
-
-  const prevProject = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + projectsData.length) % projectsData.length);
-  };
-
-  const openModal = (project) => {
-    setModalData(project);
-  };
-
-  const closeModal = () => {
-    setModalData(null);
-  };
-
-  const progress = ((currentIndex + 1) / projectsData.length) * 100;
+  const [selectedProject, setSelectedProject] = useState(null);
 
   return (
-    <section id="projects" className="projects-section">
-      <h2 className="section-title">{t('projects_title')}</h2>
-      <div className="carousel-container">
-        <button onClick={prevProject} className="carousel-arrow prev-arrow">‹</button>
-        <div className="carousel-track-container">
-          <div className="carousel-track" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+    <>
+      <section id="projects" className="projects-section">
+        <AnimatedSection animationClass="fade-in">
+          <h2 className="section-title">{t('projects_title')}</h2>
+        </AnimatedSection>
+        <AnimatedSection animationClass="slide-in-up">
+          <Swiper
+            modules={[Navigation, Pagination]}
+            spaceBetween={50}
+            slidesPerView={1}
+            navigation
+            pagination={{ type: 'progressbar' }}
+            breakpoints={{
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+            className="projects-carousel"
+          >
             {projectsData.map((project) => (
-              <div key={project.id} className="carousel-item" onClick={() => openModal(project)}>
-                <img src={project.image} alt={project.title} />
-                <h3>{project.title}</h3>
-              </div>
+              <SwiperSlide key={project.id} className="project-slide" onClick={() => setSelectedProject(project)}>
+                <img src={project.image} alt={`Project ${project.id}`} />
+                <div className="project-overlay">
+                  <p>Ver Detalles</p>
+                </div>
+              </SwiperSlide>
             ))}
-          </div>
-        </div>
-        <button onClick={nextProject} className="carousel-arrow next-arrow">›</button>
-      </div>
-      <div className="progress-bar-container">
-        <div className="progress-bar" style={{ width: `${progress}%` }}></div>
-      </div>
-      {modalData && <ProjectModal project={modalData} onClose={closeModal} />}
-    </section>
+          </Swiper>
+        </AnimatedSection>
+      </section>
+      {selectedProject && (
+        <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+      )}
+    </>
   );
 };
 

@@ -1,0 +1,41 @@
+/* Estado inicial antes de la animación */
+.pre-animate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Estado final cuando el elemento es visible */
+.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animación de desvanecimiento simple */
+.pre-animate.fade-in {
+    opacity: 0;
+    transform: translateY(0);
+}
+.animate.fade-in {
+    opacity: 1;
+}
+
+/* Animación de deslizamiento desde la izquierda */
+.pre-animate.slide-in-left {
+    opacity: 0;
+    transform: translateX(-100px);
+}
+.animate.slide-in-left {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Animación de deslizamiento desde la derecha */
+.pre-animate.slide-in-right {
+    opacity: 0;
+    transform: translateX(100px);
+}
+.animate.slide-in-right {
+    opacity: 1;
+    transform: translateX(0);
+}
