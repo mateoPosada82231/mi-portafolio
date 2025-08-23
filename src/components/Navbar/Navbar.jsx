@@ -2,17 +2,12 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import './Navbar.css';
 
-const Navbar = ({ theme, setTheme }) => {
+const Navbar = () => {
   const { t, i18n } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleLanguageChange = (lng) => {
     i18n.changeLanguage(lng);
-    setMenuOpen(false);
-  };
-
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
     setMenuOpen(false);
   };
 
@@ -33,7 +28,7 @@ const Navbar = ({ theme, setTheme }) => {
             <a href="#projects" className="nav-links" onClick={() => setMenuOpen(false)}>{t('projects')}</a>
           </li>
           <li className="nav-item">
-            <a href="#skills" className="nav-links" onClick={() => setMenuOpen(false)}>Skills</a>
+            <a href="#skills" className="nav-links" onClick={() => setMenuOpen(false)}>{t('skills_title')}</a>
           </li>
           <li className="nav-item">
             <a href="#contact" className="nav-links" onClick={() => setMenuOpen(false)}>{t('contact')}</a>
@@ -41,11 +36,6 @@ const Navbar = ({ theme, setTheme }) => {
           <li className="nav-item-lang">
             <button className="lang-btn" onClick={() => handleLanguageChange('es')}>ES</button>
             <button className="lang-btn" onClick={() => handleLanguageChange('en')}>EN</button>
-          </li>
-          <li className="nav-item-theme">
-            <button className="theme-btn" onClick={toggleTheme}>
-              {theme === 'dark' ? '☀️' : '🌙'}
-            </button>
           </li>
         </ul>
       </div>
