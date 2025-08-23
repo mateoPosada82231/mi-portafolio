@@ -11,6 +11,18 @@
   z-index: 999;
   transition: all 0.3s ease;
   width: 100%;
+  animation: slideDown 0.8s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .navbar-container {
@@ -82,6 +94,34 @@
 
 .nav-links:hover::after {
   width: 60%;
+}
+
+.nav-links a, .language-switcher button {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--primary-color);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.language-switcher button:hover {
+  color: var(--primary-color);
+  transform: scale(1.1);
 }
 
 .nav-item-lang, .nav-item-theme {
@@ -191,4 +231,3 @@
     background-color: var(--primary-color);
   }
 }
-  

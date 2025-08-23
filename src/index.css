@@ -26,10 +26,19 @@ body {
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
   
-  /* Animación de fondo */
-  background-image: radial-gradient(circle at top left, rgba(59, 130, 246, 0.15), transparent 30%),
-                    radial-gradient(circle at bottom right, rgba(100, 255, 218, 0.15), transparent 30%);
-  animation: gradientAnimation 15s ease-in-out infinite;
+  /* Animación de fondo mejorada */
+  background-image: radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.1), transparent 40%),
+                    radial-gradient(circle at 85% 30%, rgba(167, 255, 235, 0.1), transparent 40%);
+  animation: backgroundFloat 20s ease-in-out infinite;
+}
+
+@keyframes backgroundFloat {
+  0%, 100% {
+    background-position: 0% 50%, 100% 50%;
+  }
+  50% {
+    background-position: 100% 50%, 0% 50%;
+  }
 }
 
 /* Eliminar estilos base que ya no son necesarios */

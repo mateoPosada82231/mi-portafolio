@@ -5,6 +5,7 @@ import About from './components/About/About';
 import Projects from './components/Projects/Projects';
 import Skills from './components/Skills/Skills';
 import Contact from './components/Contact/Contact';
+import AnimatedSection from './components/animations/AnimatedSection';
 
 function App() {
   return (
@@ -12,10 +13,18 @@ function App() {
       <Navbar />
       <main>
         <Home />
-        <About />
-        <Projects />
-        <Skills />
-        <Contact />
+        <AnimatedSection>
+          <About />
+        </AnimatedSection>
+        <AnimatedSection>
+          <Projects />
+        </AnimatedSection>
+        <AnimatedSection>
+          <Skills />
+        </AnimatedSection>
+        <AnimatedSection>
+          <Contact />
+        </AnimatedSection>
       </main>
     </>
   );
