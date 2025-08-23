@@ -1,8 +1,6 @@
 .skills-section {
-    padding: 100px 50px;
-    background: var(--section-background-color);
-    color: var(--text-color);
-    text-align: center;
+  /* Ya no necesita padding ni background, se hereda de <section> */
+  text-align: center;
 }
   
 .skills-grid {

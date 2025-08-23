@@ -1,8 +1,7 @@
 .contact-section {
-    padding: 100px 50px;
-    background: var(--background-color);
-    color: var(--text-color);
-  }
+  /* Ya no necesita padding ni background, se hereda de <section> */
+  text-align: center;
+}
   
   .contact-container {
     display: flex;
@@ -78,4 +77,3 @@
       align-items: center;
     }
   }
-  

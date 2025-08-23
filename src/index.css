@@ -1,76 +1,94 @@
 :root {
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.6;
-  font-weight: 400;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Fuentes */
+  --font-sans: 'Poppins', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+
+  /* Paleta de colores refinada */
+  --storm-bg: #060c14; /* Fondo de noche profunda, casi negro */
+  --section-bg: rgba(10, 25, 47, 0.7); /* Azul oscuro con 70% de opacidad */
+  --text-primary: #e2e8f0; /* Un blanco suave (slate-200) para máxima legibilidad */
+  --text-secondary: #94a3b8; /* Un gris azulado para texto secundario */
+  --accent-color: #a5b4fc; /* Un lavanda pálido para los relámpagos y acentos */
+  --border-color: rgba(165, 180, 252, 0.2); /* Borde de acento semitransparente */
+  --primary-color: #3b82f6; /* Color primario para enlaces y acentos */
+
   scroll-behavior: smooth;
 }
 
 html {
-  overflow-x: hidden; /* Previene el desbordamiento por la animación */
+  overflow-x: hidden;
 }
 
 body {
-  margin: 0;
-  position: relative; /* Necesario para el pseudo-elemento */
-  z-index: 1;
+  background: var(--storm-bg);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  position: relative;
 }
 
-/* Tema Oscuro (por defecto) */
-body {
-  --background-color: #0a192f; /* Azul marino muy oscuro */
-  --section-background-color: #112240; /* Azul marino un poco más claro */
-  --text-color: #ccd6f6; /* Texto de color azul pálido */
-  --primary-color: #3b82f6; /* Un cian brillante para acentos */
-  --primary-hover-color: #a7ffeb;
-  --border-color: #233554; /* Borde azul oscuro */
-  --accent-purple: #9333ea; /* Nuevo color para un acento vibrante */
-  
-  background-color: var(--background-color);
-  color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
+/* --- Animación de Tormenta con CSS --- */
+
+/* Capa de Lluvia */
+@keyframes rain {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
 }
 
-/* Eliminamos la animación de fondo anterior del body */
-@keyframes backgroundFloat {
-  0%, 100% {
-    background-position: 0% 50%, 100% 50%;
-  }
-  50% {
-    background-position: 100% 50%, 0% 50%;
-  }
-}
-
-/* --- Nueva Animación de Fondo Espectacular (Efecto Aurora) --- */
 body::before {
   content: '';
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1; /* Lo colocamos detrás de todo el contenido */
-  
-  /* Múltiples gradientes para un efecto rico y complejo */
-  background: 
-    radial-gradient(circle at 20% 30%, var(--primary-color), transparent 35%),
-    radial-gradient(circle at 80% 70%, var(--accent-purple), transparent 35%),
-    radial-gradient(circle at 50% 90%, var(--primary-hover-color), transparent 40%);
-
-  background-size: 300% 300%; /* Hacemos los gradientes enormes */
-  
-  /* Difuminamos y saturamos para el efecto de aurora */
-  filter: blur(100px) saturate(150%);
-  opacity: 0.4; /* Controla la intensidad general del efecto */
-  animation: none; /* Desactivamos la animación del body */
+  width: 100%;
+  height: 200%;
+  z-index: -2;
+  background-image: 
+    linear-gradient(transparent, var(--storm-bg) 80%),
+    repeating-linear-gradient(
+      -25deg,
+      transparent,
+      transparent 2px,
+      rgba(165, 180, 252, 0.1) 2px,
+      rgba(165, 180, 252, 0.1) 4px
+    );
+  animation: rain 0.7s linear infinite;
 }
 
-/* Eliminar estilos base que ya no son necesarios */
-h1, button, a {
-  all: unset;
+/* Capa de Relámpago */
+@keyframes lightning {
+  0%, 100% { opacity: 0; }
+  40% { opacity: 0; }
+  41% { opacity: 0.6; }
+  42% { opacity: 0.1; }
+  43% { opacity: 0.8; }
+  45% { opacity: 0; }
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(ellipse at center, var(--accent-color) 0%, transparent 70%);
+  animation: lightning 10s linear infinite;
+  opacity: 0;
+}
+
+main {
+  position: relative;
+  z-index: 1; /* Asegura que el contenido esté sobre la tormenta */
+}
+
+/* Estilos generales para las secciones */
+section {
+  padding: 100px 50px;
+  background-color: var(--section-bg);
+  border-bottom: 1px solid var(--border-color);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 * {
@@ -88,13 +106,19 @@ h1, button, a {
 .animated-text-gradient {
   background: linear-gradient(
     90deg,
-    var(--text-color),
+    var(--text-primary),
     var(--primary-color),
-    var(--text-color)
+    var(--text-primary)
   );
   background-size: 200% auto;
   background-clip: text;
-  -webkit-background-clip: text; /* Para compatibilidad con Safari */
+  -webkit-background-clip: text;
   color: transparent;
   animation: textShimmer 4s linear infinite;
+}
+
+/* Aseguramos que el contenido principal esté por encima de la tormenta */
+main {
+  position: relative;
+  z-index: 2;
 }

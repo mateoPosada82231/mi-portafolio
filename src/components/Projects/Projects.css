@@ -1,11 +1,9 @@
 .projects-section {
-    padding: 100px 20px;
-    background: var(--background-color);
-    color: var(--text-color);
-    text-align: center;
-  }
+  /* Ya no necesita padding ni background, se hereda de <section> */
+  text-align: center;
+}
   
-  .carousel-container {
+.carousel-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -139,4 +137,3 @@
     from { transform: translateY(50px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
   }
-  

@@ -1,12 +1,12 @@
 .home-section {
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    padding: 100px 50px;
-    min-height: 100vh;
-    background: var(--background-color);
-    color: var(--text-color);
-    transition: background 0.5s, color 0.5s;
+    justify-content: space-between;
+    gap: 2rem;
+    background-color: transparent !important; /* La sección Home es totalmente transparente */
+    backdrop-filter: none !important;
+    border-bottom: 1px solid var(--border-color);
   }
   
   .home-content {
