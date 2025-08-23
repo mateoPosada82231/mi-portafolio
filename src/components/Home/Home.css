@@ -2,38 +2,34 @@
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around; /* Espacio entre las dos columnas */
     gap: 2rem;
-    background-color: transparent !important; /* La sección Home es totalmente transparente */
+    padding: 0 50px; /* Añadimos padding lateral */
+    background-color: transparent !important;
     backdrop-filter: none !important;
-    /* Eliminamos el borde que la separaba de la siguiente sección */
   }
   
   .home-content {
     max-width: 600px;
-    animation: slideInLeft 1s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea el contenido a la izquierda */
+    text-align: left; /* Alinea el texto a la izquierda */
   }
   
-  .home-content h1 {
-    font-size: 5rem;
-    color: #3b82f6;
-    margin-bottom: 1rem;
+  .home-name {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0; /* Ajuste de margen */
   }
   
-  .home-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .home-content p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-  }
-  
-  .home-animation {
-    perspective: 1000px;
-  }
-  
+  /* Nuevo contenedor para la animación */
+.home-animation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
   .rotating-m {
     width: 150px;
     height: 150px;
@@ -49,6 +45,13 @@
     transform-style: preserve-3d;
     box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
   }
+  
+  /* Hover elaborado para la M */
+.rotating-m:hover {
+  animation-play-state: paused; /* Pausamos la animación base para dar prioridad al hover */
+  transform: scale(1.1) rotate(10deg);
+  text-shadow: 0 0 30px var(--accent-color), 0 0 60px var(--accent-color), 0 0 90px #fff;
+}
   
   @keyframes rotate3d {
     0% {
@@ -84,6 +87,21 @@
       text-shadow: 0 0 10px var(--primary-color);
     }
   }
+
+  @keyframes breathingGlow {
+  0% {
+    transform: scale(1) rotate(0deg);
+    text-shadow: 0 0 15px var(--accent-color), 0 0 25px var(--accent-color);
+  }
+  50% {
+    transform: scale(1.05) rotate(5deg);
+    text-shadow: 0 0 25px var(--accent-color), 0 0 50px var(--accent-color), 0 0 75px #fff;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    text-shadow: 0 0 15px var(--accent-color), 0 0 25px var(--accent-color);
+  }
+}
   
   /* Animación de entrada para el contenido */
 .home-content > * {
@@ -120,3 +138,52 @@
       font-size: 7rem;
     }
   }
+
+  .home-buttons {
+  display: flex;
+  gap: 1.5rem; /* Aumentamos un poco el espacio entre botones */
+}
+
+/* --- Nuevos Estilos para Botones --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn svg {
+  font-size: 1.2rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #fff;
+  border-color: var(--primary-color);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+/* Efecto de brillo al pasar el cursor */
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 20px var(--primary-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--section-bg);
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 20px var(--border-color);
+}
