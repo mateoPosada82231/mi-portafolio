@@ -10,8 +10,12 @@ const resources = {
       contact: 'Contact',
 
       // Home
-      frontend_developer: 'Frontend Developer',
-      home_description: 'Passionate about creating dynamic and modern web applications. Turning ideas into intuitive and engaging user experiences.',
+      home: {
+        intro: 'Hi, my name is',
+        name: 'Mateo Posada',
+        title: 'Frontend Developer',
+        description: 'Passionate about creating dynamic and modern web applications. Turning ideas into intuitive and engaging user experiences.'
+      },
 
       // About
       about_me_title: 'About Me',
@@ -48,8 +52,12 @@ const resources = {
       contact: 'Contacto',
 
       // Home
-      frontend_developer: 'Desarrollador Frontend',
-      home_description: 'Apasionado por la creación de aplicaciones web dinámicas y modernas. Convierto ideas en experiencias de usuario intuitivas y atractivas.',
+      home: {
+        intro: 'Hola, mi nombre es',
+        name: 'Mateo Posada',
+        title: 'Desarrollador Frontend',
+        description: 'Apasionado por la creación de aplicaciones web dinámicas y modernas. Convierto ideas en experiencias de usuario intuitivas y atractivas.'
+      },
 
       // About
       about_me_title: 'Sobre Mí',

@@ -8,9 +8,13 @@ const Home = () => {
   return (
     <section id="home" className="home-section">
       <div className="home-content">
-        <h1>Mateo</h1>
-        <h2>{t('frontend_developer')}</h2>
-        <p>{t('home_description')}</p>
+        <p className="home-intro">{t('home.intro')}</p>
+        <h1 className="home-name animated-text-gradient">{t('home.name')}</h1>
+        <h2 className="home-title">{t('home.title')}</h2>
+        <p className="home-description">{t('home.description')}</p>
+        <div className="home-buttons">
+          {/* Add any buttons or links here */}
+        </div>
       </div>
       <div className="home-animation">
         <div className="rotating-m">M</div>

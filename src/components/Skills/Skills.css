@@ -1,126 +1,109 @@
 .skills-section {
     padding: 100px 50px;
     background: var(--section-background-color);
+    color: var(--text-color);
     text-align: center;
-    overflow: hidden;
-  }
+}
   
-  .skills-grid {
+.skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 4rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-top: 2rem;
-  }
+    gap: 50px;
+    margin-top: 50px;
+    justify-items: center;
+}
   
-  .skill-item {
+.skill-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 15px;
     animation: zoomIn 0.5s ease-out forwards;
-    opacity: 0;
-  }
+    opacity: 0; /* Inicia oculto para la animación */
+    transition: transform 0.3s ease-in-out; /* Transición para el hover */
+}
+
+.skill-item:hover {
+    transform: translateY(-10px); /* Eleva el ítem al pasar el cursor */
+}
   
-  @property --p {
-    syntax: '<integer>';
-    initial-value: 0;
-    inherits: false;
-  }
+.skill-progress-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: filter 0.3s ease-in-out; /* Transición para el brillo */
+}
+
+.skill-item:hover .skill-progress-container {
+    filter: drop-shadow(0 0 10px var(--primary-color)); /* Añade un brillo al pasar el cursor */
+}
   
-  .skill-circle {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    background: 
-      radial-gradient(farthest-side, var(--section-background-color) 80%, #0000 0),
-      conic-gradient(var(--primary-color) calc(var(--p) * 1%), var(--border-color) 0);
-    animation: p 1s 0.5s both;
-    transition: --p 1s;
-  }
+.skill-progress-ring {
+    transform: rotate(-90deg); /* Inicia el círculo desde la parte superior */
+}
   
-  @keyframes p {
-    from { --p: 0; }
-  }
+.skill-progress-ring__circle-bg {
+    stroke: #334155; /* Color de fondo para el círculo */
+}
   
-  .skill-circle::before {
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-    inset: 10px;
-    background: var(--section-background-color);
-  }
-  
-  .skill-circle svg {
-    width: 100%;
-    height: 100%;
-    transform: rotate(-90deg);
-  }
-  
-  .skill-circle .circle-bg {
-    fill: none;
-    stroke: #334155;
-    stroke-width: 10;
-  }
-  
-  .skill-circle .circle-progress {
-    fill: none;
-    stroke: #3b82f6;
-    stroke-width: 10;
+.skill-progress-ring__circle {
+    stroke: var(--primary-color);
+    transition: stroke-dashoffset 0.8s ease-out;
     stroke-linecap: round;
-    transition: stroke-dashoffset 1s ease-out;
-  }
+}
   
-  .skill-logo {
-    width: 50px;
-    height: 50px;
+.skill-logo-overlay {
+    position: absolute;
+    width: 60px; /* Ajusta el tamaño para que quepa dentro del anillo */
+    height: 60px;
     object-fit: contain;
-    z-index: 1;
-    transition: transform 0.3s ease;
-  }
+    transition: transform 0.3s ease-in-out; /* Transición para el logo */
+}
+
+.skill-item:hover .skill-logo-overlay {
+    transform: scale(1.1); /* Agranda ligeramente el logo */
+}
   
-  .skill-item:hover .skill-logo {
-    transform: scale(1.1);
-  }
-  
-  .skill-name {
-    font-size: 1.2rem;
+.skill-name {
+    font-size: 1.1rem;
     font-weight: 500;
-    color: var(--text-color);
-    margin-top: 0.5rem;
-  }
-  
-  .skill-level {
+    margin-top: 5px;
+    margin-bottom: 0; /* Ajuste para que no haya mucho espacio */
+}
+
+.skill-level {
     font-size: 0.9rem;
-    color: var(--primary-color);
     font-weight: bold;
-  }
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
   
-  @keyframes zoomIn {
+@keyframes zoomIn {
     from {
-      opacity: 0;
-      transform: scale(0.5);
+        opacity: 0;
+        transform: scale(0.5);
     }
     to {
-      opacity: 1;
-      transform: scale(1);
+        opacity: 1;
+        transform: scale(1);
     }
-  }
+}
   
-  /* Animación escalonada para los items */
-  .skills-grid .skill-item:nth-child(1) { animation-delay: 0.1s; }
-  .skills-grid .skill-item:nth-child(2) { animation-delay: 0.2s; }
-  .skills-grid .skill-item:nth-child(3) { animation-delay: 0.3s; }
-  .skills-grid .skill-item:nth-child(4) { animation-delay: 0.4s; }
-  .skills-grid .skill-item:nth-child(5) { animation-delay: 0.5s; }
-  .skills-grid .skill-item:nth-child(6) { animation-delay: 0.6s; }
-  .skills-grid .skill-item:nth-child(7) { animation-delay: 0.7s; }
-  .skills-grid .skill-item:nth-child(8) { animation-delay: 0.8s; }
-  .skills-grid .skill-item:nth-child(9) { animation-delay: 0.9s; }
-  .skills-grid .skill-item:nth-child(10) { animation-delay: 1.0s; }
-  .skills-grid .skill-item:nth-child(11) { animation-delay: 1.1s; }
-  .skills-grid .skill-item:nth-child(12) { animation-delay: 1.2s; }
-  .skills-grid .skill-item:nth-child(13) { animation-delay: 1.3s; }
+/* Animación escalonada para los items */
+.skills-grid .skill-item:nth-child(1) { animation-delay: 0.1s; }
+.skills-grid .skill-item:nth-child(2) { animation-delay: 0.2s; }
+.skills-grid .skill-item:nth-child(3) { animation-delay: 0.3s; }
+.skills-grid .skill-item:nth-child(4) { animation-delay: 0.4s; }
+.skills-grid .skill-item:nth-child(5) { animation-delay: 0.5s; }
+.skills-grid .skill-item:nth-child(6) { animation-delay: 0.6s; }
+.skills-grid .skill-item:nth-child(7) { animation-delay: 0.7s; }
+.skills-grid .skill-item:nth-child(8) { animation-delay: 0.8s; }
+.skills-grid .skill-item:nth-child(9) { animation-delay: 0.9s; }
+.skills-grid .skill-item:nth-child(10) { animation-delay: 1.0s; }
+.skills-grid .skill-item:nth-child(11) { animation-delay: 1.1s; }
+.skills-grid .skill-item:nth-child(12) { animation-delay: 1.2s; }
+.skills-grid .skill-item:nth-child(13) { animation-delay: 1.3s; }
