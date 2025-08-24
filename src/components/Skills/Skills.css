@@ -36,7 +36,8 @@
 }
 
 .skill-item:hover .skill-progress-container {
-    filter: drop-shadow(0 0 10px var(--primary-color)); /* Añade un brillo al pasar el cursor */
+    /* Usamos la variable para que el brillo coincida con el color de la habilidad */
+    filter: drop-shadow(0 0 10px var(--skill-color)); 
 }
   
 .skill-progress-ring {
@@ -48,7 +49,8 @@
 }
   
 .skill-progress-ring__circle {
-    stroke: var(--primary-color);
+    /* Esta regla ahora funcionará porque la variable está definida en el padre */
+    stroke: var(--skill-color);
     transition: stroke-dashoffset 0.8s ease-out;
     stroke-linecap: round;
 }
@@ -75,7 +77,8 @@
 .skill-level {
     font-size: 0.9rem;
     font-weight: bold;
-    color: var(--primary-color);
+    /* Usamos la variable aquí también para unificar el color */
+    color: var(--skill-color);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
