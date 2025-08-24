@@ -25,24 +25,107 @@
   .carousel-item {
     min-width: 100%;
     box-sizing: border-box;
-    padding: 20px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+    padding: 10px; /* Reducimos el padding para dar más espacio al efecto */
+    position: relative; /* Necesario para los pseudo-elementos y la superposición */
+    border-radius: 12px;
+    overflow: hidden; /* Oculta el borde de neón cuando no está en hover */
+    transform-style: preserve-3d; /* Activa el contexto 3D */
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
   }
   
+  .carousel-item::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150%; /* Hacemos el gradiente más grande que la tarjeta */
+  height: 150%;
+  z-index: 1;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    transparent 70%,
+    var(--accent-color),
+    var(--primary-color),
+    var(--accent-color),
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  animation: rotateNeonBorder 3s linear infinite paused; /* Animación más rápida y pausada por defecto */
+}
+  
   .carousel-item:hover {
-    transform: scale(1.05);
+    transform: perspective(1000px) rotateY(5deg) rotateX(2deg) scale3d(1.05, 1.05, 1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* Añadimos una sombra para más profundidad */
+  }
+  
+  .carousel-item:hover::before {
+    opacity: 1;
+    animation-play-state: running; /* Inicia la animación del borde al pasar el cursor */
+  }
+  
+  @keyframes rotateNeonBorder { /* Renombramos la animación para más claridad */
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+  
+  .project-content-wrapper {
+    position: relative;
+    z-index: 2; /* Asegura que el contenido esté sobre el borde de neón */
+    background: #1e293b; /* Fondo oscuro para la tarjeta */
+    border-radius: 10px;
+    padding: 10px;
+    height: 100%;
+    overflow: hidden;
   }
   
   .carousel-item img {
     width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    transition: transform 0.6s ease;
   }
   
-  .carousel-item h3 {
-    margin-top: 15px;
-    color: #3b82f6;
+  .carousel-item:hover img {
+    transform: scale(1.1);
+  }
+  
+  .project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(10, 25, 47, 0.9) 0%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .carousel-item:hover .project-overlay {
+    opacity: 1;
+  }
+  
+  .project-overlay h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    transform: translateY(20px);
+    transition: transform 0.5s ease;
+  }
+  
+  .project-overlay p {
+    color: var(--text-secondary);
+    transform: translateY(20px);
+    transition: transform 0.5s ease 0.1s;
+  }
+  
+  .carousel-item:hover .project-overlay h3,
+  .carousel-item:hover .project-overlay p {
+    transform: translateY(0);
   }
   
   .carousel-arrow {
@@ -83,57 +166,104 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(6, 12, 20, 0.5); /* Usamos el color de fondo base con transparencia */
+    backdrop-filter: blur(10px); /* Efecto cristal esmerilado sobre el resto de la app */
+    -webkit-backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    animation: fadeIn 0.3s;
+    animation: fadeIn 0.3s ease-out;
   }
   
   .modal-content {
-    background: #1e293b;
-    padding: 30px;
-    border-radius: 10px;
-    max-width: 600px;
+    background: var(--section-bg); /* Usamos el color de fondo de las secciones */
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color); /* Borde sutil */
+    max-width: 700px;
     width: 90%;
     position: relative;
-    animation: slideUp 0.4s;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
   
   .modal-close {
     position: absolute;
     top: 15px;
     right: 15px;
-    background: none;
-    border: none;
-    color: #e5e7eb;
-    font-size: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    color: var(--text-primary);
+    font-size: 1.2rem;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  
+  .modal-close:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    transform: rotate(90deg);
   }
   
   .modal-content h2 {
-    color: #3b82f6;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .modal-content p {
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 25px;
   }
   
   .modal-links {
-    margin-top: 20px;
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
   }
   
+  /* Reutilizamos los estilos de los botones de la sección Home */
   .modal-links a {
-    color: #3b82f6;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
     text-decoration: none;
-    margin-right: 20px;
-    font-weight: bold;
+    border: 2px solid var(--border-color);
+    color: var(--text-primary);
+    background-color: transparent;
+    transition: all 0.3s ease;
+  }
+  
+  .modal-links a:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
   
   @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from { opacity: 0; backdrop-filter: blur(0px); }
+    to { opacity: 1; backdrop-filter: blur(10px); }
   }
   
   @keyframes slideUp {
-    from { transform: translateY(50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+    from { transform: translateY(50px) scale(0.95); opacity: 0; }
+    to { transform: translateY(0) scale(1); opacity: 1; }
   }

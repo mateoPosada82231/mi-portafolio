@@ -4,9 +4,9 @@ import './Projects.css';
 import ProjectModal from './ProjectModal';
 
 // Importa tus imágenes de proyectos
-import proj1 from '../../assets/proj1.png';
-import proj2 from '../../assets/proj2.png';
-import proj3 from '../../assets/proj3.png';
+import proj1 from '../../assets/proj1.jpg';
+import proj2 from '../../assets/proj2.jpg';
+import proj3 from '../../assets/proj3.jpg';
 
 const projectsData = [
   {
@@ -67,8 +67,13 @@ const Projects = () => {
           <div className="carousel-track" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
             {projectsData.map((project) => (
               <div key={project.id} className="carousel-item" onClick={() => openModal(project)}>
-                <img src={project.image} alt={project.title} />
-                <h3>{project.title}</h3>
+                <div className="project-content-wrapper">
+                  <img src={project.image} alt={project.title} />
+                  <div className="project-overlay">
+                    <h3>{project.title}</h3>
+                    <p>Haz clic para ver más</p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
