@@ -30,7 +30,7 @@ const resources = {
 
       // Skills
       skills_title: 'My Skills',
-      level_low: 'Beginner',
+      level_low: 'Learning',
       level_intermediate: 'Intermediate',
       level_high: 'Advanced',
 
@@ -72,7 +72,7 @@ const resources = {
 
       // Skills
       skills_title: 'Mis Habilidades',
-      level_low: 'Básico',
+      level_low: 'Aprendiendo',
       level_intermediate: 'Intermedio',
       level_high: 'Avanzado',
 

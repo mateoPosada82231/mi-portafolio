@@ -7,7 +7,7 @@ const Skill = ({ name, level, logo, color }) => {
   const offset = circumference - (level / 100) * circumference;
 
   const getLevelText = (level) => {
-    if (level < 60) return 'Básico';
+    if (level < 60) return 'Aprendiendo';
     if (level < 85) return 'Intermedio';
     return 'Avanzado';
   };

@@ -4,266 +4,313 @@
 }
   
 .carousel-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
-    position: relative;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  position: relative;
+}
   
-  .carousel-track-container {
-    overflow: hidden;
-    width: 80%;
-    max-width: 800px;
-  }
+
+.carousel-track-container {
+  overflow: hidden; /* Volvemos a ocultar los proyectos laterales */
+  width: 100vw;
+  max-width: 520px;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
   
-  .carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
+.carousel-track {
+  display: flex;
+  align-items: center;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  width: 100%;
+}
   
-  .carousel-item {
-    min-width: 100%;
-    box-sizing: border-box;
-    padding: 10px; /* Reducimos el padding para dar más espacio al efecto */
-    position: relative; /* Necesario para los pseudo-elementos y la superposición */
-    border-radius: 12px;
-    overflow: hidden; /* Oculta el borde de neón cuando no está en hover */
-    transform-style: preserve-3d; /* Activa el contexto 3D */
-    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  }
+.carousel-item {
+  min-width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0;
+  position: relative;
+  border-radius: 24px;
+  overflow: visible;
+  transform-style: preserve-3d;
+  z-index: 10;
+  transition: 
+    transform 0.5s cubic-bezier(0.23, 1, 0.32, 1),
+    box-shadow 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  background: none;
+}
   
-  .carousel-item::before {
+.carousel-item::before {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 150%; /* Hacemos el gradiente más grande que la tarjeta */
-  height: 150%;
+  top: -6px;
+  left: -6px;
+  width: calc(100% + 12px);
+  height: calc(100% + 12px);
   z-index: 1;
+  border-radius: 28px;
   background: conic-gradient(
     from 0deg,
-    transparent 0%,
-    transparent 70%,
-    var(--accent-color),
-    var(--primary-color),
-    var(--accent-color),
+    var(--primary-color) 0%,
+    var(--accent-color) 30%,
+    #fff 50%,
+    var(--primary-color) 80%,
     transparent 100%
   );
   opacity: 0;
-  transition: opacity 0.5s ease;
-  animation: rotateNeonBorder 3s linear infinite paused; /* Animación más rápida y pausada por defecto */
+  filter: blur(1.5px) brightness(1.1);
+  box-shadow: 0 0 10px 2px var(--primary-color);
+  transition: opacity 0.3s, filter 0.3s;
+  animation: neonSpin 3.5s linear infinite paused;
+  pointer-events: none;
 }
   
-  .carousel-item:hover {
-    transform: perspective(1000px) rotateY(5deg) rotateX(2deg) scale3d(1.05, 1.05, 1.05);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* Añadimos una sombra para más profundidad */
-  }
+.carousel-item:hover {
+  transform: perspective(800px) rotateY(8deg) scale(1.07);
+  box-shadow: 0 8px 32px 0 rgba(59,130,246,0.25), 0 0 40px 0 var(--primary-color);
+  z-index: 2;
+}
   
-  .carousel-item:hover::before {
-    opacity: 1;
-    animation-play-state: running; /* Inicia la animación del borde al pasar el cursor */
-  }
+.carousel-item:hover::before {
+  opacity: 0.7;
+  filter: blur(2.5px) brightness(1.2);
+  animation-play-state: running;
+}
   
-  @keyframes rotateNeonBorder { /* Renombramos la animación para más claridad */
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg); }
-  }
+@keyframes neonSpin {
+  0% { transform: rotate(0deg) scale(1.05); }
+  100% { transform: rotate(360deg) scale(1.05); }
+}
   
+.project-content-wrapper {
+  position: relative;
+  z-index: 2;
+  background: none;
+  border-radius: 20px;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+  
+.carousel-item img {
+  width: 100%;
+  border-radius: 20px;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  min-height: 260px;
+  max-height: 340px;
+  object-fit: cover;
+  background: #000;
+}
+  
+.carousel-item:hover img {
+  transform: scale(1.08);
+}
+  
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(10, 25, 47, 0.92) 0%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 18px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+  
+.carousel-item:hover .project-overlay {
+  opacity: 1;
+}
+  
+.project-overlay h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  transform: translateY(20px);
+  transition: transform 0.5s;
+}
+  
+.project-overlay p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  transform: translateY(20px);
+  transition: transform 0.5s 0.1s;
+}
+  
+.carousel-item:hover .project-overlay h3,
+.carousel-item:hover .project-overlay p {
+  transform: translateY(0);
+}
+  
+.carousel-arrow {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  font-size: 2.2rem;
+  cursor: pointer;
+  padding: 8px;
+  transition: color 0.3s;
+}
+  
+.carousel-arrow:hover {
+  color: #60a5fa;
+}
+  
+.progress-bar-container {
+  width: 60%;
+  max-width: 300px;
+  height: 7px;
+  background-color: #334155;
+  border-radius: 4px;
+  margin: 20px auto 0;
+  overflow: hidden;
+}
+  
+.progress-bar {
+  height: 100%;
+  background-color: #3b82f6;
+  border-radius: 4px;
+  transition: width 0.5s;
+}
+  
+/* Modal igual que antes... */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(6, 12, 20, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+  
+.modal-content {
+  background: var(--section-bg);
+  padding: 32px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  max-width: 480px;
+  width: 95vw;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+  
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+  
+.modal-close:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+  transform: rotate(90deg);
+}
+  
+.modal-content h2 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 12px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+  
+.modal-content p {
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+}
+  
+.modal-links {
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+}
+  
+.modal-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid var(--border-color);
+  color: var(--text-primary);
+  background-color: transparent;
+  transition: all 0.3s;
+}
+  
+.modal-links a:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+  
+@keyframes fadeIn {
+  from { opacity: 0; backdrop-filter: blur(0px); }
+  to { opacity: 1; backdrop-filter: blur(10px); }
+}
+  
+@keyframes slideUp {
+  from { transform: translateY(50px) scale(0.95); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* Responsive para móvil */
+@media (max-width: 600px) {
+  .carousel-track-container {
+    max-width: 100vw;
+    min-height: 220px;
+  }
+  .carousel-item {
+    min-width: 100vw;
+    max-width: 100vw;
+    margin: 0;
+  }
   .project-content-wrapper {
-    position: relative;
-    z-index: 2; /* Asegura que el contenido esté sobre el borde de neón */
-    background: #1e293b; /* Fondo oscuro para la tarjeta */
-    border-radius: 10px;
-    padding: 10px;
-    height: 100%;
-    overflow: hidden;
+    min-height: 140px;
+    padding: 0;
   }
-  
   .carousel-item img {
-    width: 100%;
-    border-radius: 8px;
-    transition: transform 0.6s ease;
+    min-height: 120px;
+    max-height: 180px;
   }
-  
-  .carousel-item:hover img {
-    transform: scale(1.1);
-  }
-  
-  .project-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(10, 25, 47, 0.9) 0%, transparent 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 20px;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-  }
-  
-  .carousel-item:hover .project-overlay {
-    opacity: 1;
-  }
-  
-  .project-overlay h3 {
-    color: #fff;
-    font-size: 1.5rem;
-    transform: translateY(20px);
-    transition: transform 0.5s ease;
-  }
-  
-  .project-overlay p {
-    color: var(--text-secondary);
-    transform: translateY(20px);
-    transition: transform 0.5s ease 0.1s;
-  }
-  
-  .carousel-item:hover .project-overlay h3,
-  .carousel-item:hover .project-overlay p {
-    transform: translateY(0);
-  }
-  
-  .carousel-arrow {
-    background: none;
-    border: none;
-    color: #3b82f6;
-    font-size: 3rem;
-    cursor: pointer;
-    padding: 10px;
-    transition: color 0.3s ease;
-  }
-  
-  .carousel-arrow:hover {
-    color: #60a5fa;
-  }
-  
-  .progress-bar-container {
-    width: 50%;
-    max-width: 400px;
-    height: 8px;
-    background-color: #334155;
-    border-radius: 4px;
-    margin: 30px auto 0;
-    overflow: hidden;
-  }
-  
-  .progress-bar {
-    height: 100%;
-    background-color: #3b82f6;
-    border-radius: 4px;
-    transition: width 0.5s ease-in-out;
-  }
-  
-  /* ProjectModal.css */
-  .modal-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(6, 12, 20, 0.5); /* Usamos el color de fondo base con transparencia */
-    backdrop-filter: blur(10px); /* Efecto cristal esmerilado sobre el resto de la app */
-    -webkit-backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    animation: fadeIn 0.3s ease-out;
-  }
-  
-  .modal-content {
-    background: var(--section-bg); /* Usamos el color de fondo de las secciones */
-    padding: 40px;
-    border-radius: 12px;
-    border: 1px solid var(--border-color); /* Borde sutil */
-    max-width: 700px;
-    width: 90%;
-    position: relative;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    animation: slideUp 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  }
-  
-  .modal-close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid var(--border-color);
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    color: var(--text-primary);
-    font-size: 1.2rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-  }
-  
-  .modal-close:hover {
-    background-color: var(--primary-color);
-    color: #fff;
-    transform: rotate(90deg);
-  }
-  
-  .modal-content h2 {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  
-  .modal-content p {
-    line-height: 1.7;
-    color: var(--text-secondary);
-    margin-bottom: 25px;
-  }
-  
-  .modal-links {
-    margin-top: 25px;
-    display: flex;
-    gap: 15px;
-  }
-  
-  /* Reutilizamos los estilos de los botones de la sección Home */
-  .modal-links a {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    border: 2px solid var(--border-color);
-    color: var(--text-primary);
-    background-color: transparent;
-    transition: all 0.3s ease;
-  }
-  
-  .modal-links a:hover {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    color: #fff;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; backdrop-filter: blur(0px); }
-    to { opacity: 1; backdrop-filter: blur(10px); }
-  }
-  
-  @keyframes slideUp {
-    from { transform: translateY(50px) scale(0.95); opacity: 0; }
-    to { transform: translateY(0) scale(1); opacity: 1; }
-  }
+}
