@@ -59,7 +59,7 @@ const Contact = () => {
           <h3>{t('contact_info_title')}</h3>
           <p>{t('contact_info_text')}</p>
           <div className="social-links">
-            <a href="https://www.linkedin.com/in/mateo-posada-saldarriaga/" target="_blank" rel="noopener noreferrer" className="social-link">
+            <a href="https://www.linkedin.com/in/mateo-posada-montoya-072583352" target="_blank" rel="noopener noreferrer" className="social-link">
               <FaLinkedin />
               <span>LinkedIn</span>
             </a>

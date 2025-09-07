@@ -18,7 +18,7 @@ const Home = () => {
           <a href="https://github.com/mateoPosada82231" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
             <FaGithub /> GitHub
           </a>
-          <a href="https://www.linkedin.com/in/mateo-posada-saldarriaga/" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+          <a href="https://www.linkedin.com/in/mateo-posada-montoya-072583352" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
             <FaLinkedin /> LinkedIn
           </a>
         </div>
