@@ -5,26 +5,26 @@ import './Projects.css';
 import ProjectModal from './ProjectModal';
 
 // Importa tus imágenes de proyectos
-import proj1 from '../../assets/proj1.jpg';
-import proj2 from '../../assets/proj2.jpg';
+import proj1 from '../../assets/p-marvel.jpg';
+import proj2 from '../../assets/p-hairhub.jpg';
 import proj3 from '../../assets/proj3.jpg';
 
 const projectsData = [
   {
     id: 1,
-    title: 'Project 1',
-    description: 'project1_description',
+    title: 'Buscardor de personajes Marvel',
+    description: 'Proyecto realizado con React, Tailwind CSS y la API de Marvel. Permite buscar personajes, ver detalles y explorar cómics relacionados. Incluye paginación y diseño responsivo.',
     image: proj1,
-    github: 'https://github.com',
+    github: 'https://github.com/mateoPosada82231/marvel',
     live: 'https://github.com',
   },
   {
     id: 2,
-    title: 'Project 2',
-    description: 'project2_description',
+    title: 'Hair Hub',
+    description: 'desarrollo del frontend de un proyecto de peluquería en línea que permite a los usuarios reservar citas, ver estilos de cabello y obtener recomendaciones personalizadas. Desarrollado con React y Firebase.',
     image: proj2,
-    github: 'https://github.com',
-    live: 'https://github.com',
+    github: 'https://github.com/mateoPosada82231/hairhub',
+    live: 'https://hairhub.com',
   },
   {
     id: 3,
