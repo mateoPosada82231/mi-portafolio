@@ -3,16 +3,27 @@
   --font-sans: 'Poppins', sans-serif;
   --font-mono: 'Fira Code', monospace;
 
-  /* Paleta de colores refinada */
-  --storm-bg: #060c14; /* Fondo de noche profunda, casi negro */
-  --section-bg: rgba(10, 25, 47, 0.7); /* Azul oscuro con 70% de opacidad */
-  --text-primary: #e2e8f0; /* Un blanco suave (slate-200) para máxima legibilidad */
-  --text-secondary: #94a3b8; /* Un gris azulado para texto secundario */
-  --accent-color: #a5b4fc; /* Un lavanda pálido para los relámpagos y acentos */
-  --border-color: rgba(165, 180, 252, 0.2); /* Borde de acento semitransparente */
-  --primary-color: #3b82f6; /* Color primario para enlaces y acentos */
+  /* Tema Oscuro (por defecto) */
+  --storm-bg: #060c14;
+  --section-bg: rgba(10, 25, 47, 0.7);
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --accent-color: #a5b4fc;
+  --border-color: rgba(165, 180, 252, 0.2);
+  --primary-color: #3b82f6;
 
   scroll-behavior: smooth;
+}
+
+/* Tema Claro */
+[data-theme="light"] {
+  --storm-bg: #f1f5f9;
+  --section-bg: rgba(255, 255, 255, 0.85);
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --accent-color: #6366f1;
+  --border-color: rgba(99, 102, 241, 0.2);
+  --primary-color: #3b82f6;
 }
 
 html {
@@ -24,14 +35,15 @@ body {
   color: var(--text-primary);
   font-family: var(--font-sans);
   position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 section {
-  padding: 80px 50px; /* Reducimos un poco el padding vertical */
+  padding: 80px 50px;
   background-color: var(--section-bg);
-  /* Eliminamos el border-bottom para una transición más suave */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease;
 }
 
 .section-title {

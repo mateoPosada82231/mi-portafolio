@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useTheme } from '../../context/ThemeContext';
 import './Navbar.css';
-import { FaVideo, FaVideoSlash } from 'react-icons/fa';
+import { FaVideo, FaVideoSlash, FaSun, FaMoon } from 'react-icons/fa';
 
 const Navbar = ({ videoEnabled, toggleVideo }) => {
   const { t, i18n } = useTranslation();
+  const { theme, toggleTheme } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleLanguageChange = (lng) => {
@@ -45,9 +47,15 @@ const Navbar = ({ videoEnabled, toggleVideo }) => {
         </ul>
         
         <div className="nav-controls">
-          <button onClick={toggleVideo} className="video-toggle-btn" aria-label="Toggle video background">
-            {videoEnabled ? <FaVideo /> : <FaVideoSlash />}
+          <button onClick={toggleTheme} className="theme-toggle-btn" aria-label="Toggle theme">
+            {theme === 'dark' ? <FaSun /> : <FaMoon />}
           </button>
+          
+          {theme === 'dark' && (
+            <button onClick={toggleVideo} className="video-toggle-btn" aria-label="Toggle video background">
+              {videoEnabled ? <FaVideo /> : <FaVideoSlash />}
+            </button>
+          )}
           
           <button className={`menu-icon ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
             <div className="menu-line"></div>

@@ -1,5 +1,6 @@
-import React, { useState } from 'react'; // Importa useState
+import React, { useState } from 'react';
 import './i18n';
+import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import About from './components/About/About';
@@ -10,20 +11,16 @@ import AnimatedSection from './components/animations/AnimatedSection';
 import VideoBackground from './components/animations/VideoBackground';
 
 function App() {
-  // Estado para controlar la visibilidad del video
   const [videoEnabled, setVideoEnabled] = useState(true);
 
-  // Función para cambiar el estado
   const toggleVideo = () => {
     setVideoEnabled(prev => !prev);
   };
 
   return (
-    <>
-      {/* Renderiza el video solo si el estado es true */}
+    <ThemeProvider>
       {videoEnabled && <VideoBackground />}
       
-      {/* Pasa el estado y la función al Navbar */}
       <Navbar videoEnabled={videoEnabled} toggleVideo={toggleVideo} />
       
       <main>
@@ -41,7 +38,7 @@ function App() {
           <Contact />
         </AnimatedSection>
       </main>
-    </>
+    </ThemeProvider>
   );
 }
 
