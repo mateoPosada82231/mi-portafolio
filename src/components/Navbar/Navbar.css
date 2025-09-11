@@ -12,6 +12,9 @@
   transition: all 0.3s ease;
   width: 100%;
   animation: slideDown 0.8s ease-out;
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 
 @keyframes slideDown {
@@ -33,6 +36,9 @@
   width: 100%;
   padding: 0 24px;
   max-width: 1300px;
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 
 .navbar-logo {
@@ -151,12 +157,31 @@
 
 .menu-icon {
   display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+  box-shadow: none;
+}
+
+.menu-line {
+  width: 28px;
+  height: 3px;
+  background-color: var(--text-color);
+  margin: 3px 0;
+  transition: all 0.4s ease-in-out;
+  border-radius: 2px;
 }
 
 .nav-controls {
   display: flex;
   align-items: center;
-  gap: 20px; /* Espacio entre el toggle y el idioma */
+  gap: 20px;
 }
 
 .video-toggle-btn {
@@ -164,7 +189,7 @@
   border: none;
   color: var(--text-primary);
   cursor: pointer;
-  font-size: 1.5rem; /* Tamaño del icono */
+  font-size: 1.5rem;
   padding: 5px;
   display: flex;
   align-items: center;
@@ -187,15 +212,21 @@
   .nav-menu {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 80%;
     height: 100vh;
     position: fixed;
     top: 0;
     right: -100%;
     opacity: 1;
     transition: all 0.6s ease-in-out;
-    background: var(--section-background-color);
+    background: rgba(10, 25, 47, 0.95); /* Fondo más sólido */
+    backdrop-filter: blur(10px);
     padding-top: 60px;
+    z-index: 998; /* Asegurar que esté debajo del botón pero encima del contenido */
+    border: none;
+    outline: none;
+    box-shadow: none;
+    overflow-x: hidden;
   }
 
   .nav-menu.active {
@@ -212,6 +243,7 @@
     padding: 1.5rem;
     width: 100%;
     display: table;
+    color: var(--text-primary); /* Asegurar color visible */
   }
 
   .nav-links:hover {
@@ -223,28 +255,53 @@
     width: 0;
   }
 
-  .nav-item-lang, .nav-item-theme {
+  .nav-item-lang {
     margin: 1rem 0;
     justify-content: center;
   }
 
-  .menu-icon {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
-    font-size: 1.8rem;
+  .lang-btn {
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 6px;
+    padding: 0.5em 1em;
+    font-size: 0.9rem;
+    font-weight: bold;
     cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 5px;
+  }
+
+  .lang-btn:hover {
+    background: var(--primary-color);
+    color: var(--storm-bg);
+    box-shadow: 0 0 10px var(--primary-color);
+  }
+
+  /* Reorganizar los controles en mobile */
+  .nav-controls {
+    position: relative;
+    z-index: 999; /* Asegurar que esté por encima del menú */
+  }
+
+  .menu-icon {
+    display: flex; /* Mostrar en móvil */
+    position: relative; /* Cambiar de absolute a relative */
     z-index: 1000;
+    background: none !important;
+    border: none;
+    outline: none;
+    box-shadow: none;
   }
 
   .menu-icon .menu-line {
     width: 28px;
     height: 3px;
-    background-color: var(--text-color);
-    margin: 6px 0;
+    background-color: var(--text-primary); /* Usar variable correcta */
+    margin: 3px 0; /* Reducir margen */
     transition: all 0.4s ease-in-out;
+    border-radius: 2px; /* Redondear líneas */
   }
 
   .menu-icon.open .menu-line:nth-child(1) {
