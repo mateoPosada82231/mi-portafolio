@@ -23,10 +23,13 @@ const resources = {
 
       // Projects
       projects_title: 'My Projects',
-      project1_description: 'Description for project 1. A brief summary of the technologies used and its purpose.',
-      project2_description: 'Description for project 2. A brief summary of the technologies used and its purpose.',
+      project1_title: 'Marvel Character Finder',
+      project1_description: 'Project built with React, Tailwind CSS and the Marvel API. Allows you to search for characters, view details and explore related comics. Includes pagination and responsive design.',
+      project2_title: 'Car Dealership',
+      project2_description: 'Application that connects backend and frontend to manage a car dealership. Allows users to view, search, delete and modify vehicles.',
       project3_description: 'Description for project 3. A brief summary of the technologies used and its purpose.',
       live_demo: 'Live Demo',
+      click_more: 'Click to see more',
 
       // Skills
       skills_title: 'My Skills',
@@ -65,10 +68,13 @@ const resources = {
 
       // Projects
       projects_title: 'Mis Proyectos',
-      project1_description: 'Descripción para el proyecto 1. Un breve resumen de las tecnologías usadas y su finalidad.',
-      project2_description: 'Descripción para el proyecto 2. Un breve resumen de las tecnologías usadas y su finalidad.',
+      project1_title: 'Buscador de personajes Marvel',
+      project1_description: 'Proyecto realizado con React, Tailwind CSS y la API de Marvel. Permite buscar personajes, ver detalles y explorar cómics relacionados. Incluye paginación y diseño responsivo.',
+      project2_title: 'Concesionario de Autos',
+      project2_description: 'Aplicación que une backend y frontend para gestionar un concesionario de coches. Permite a los usuarios ver, buscar, eliminar y modificar vehículos.',
       project3_description: 'Descripción para el proyecto 3. Un breve resumen de las tecnologías usadas y su finalidad.',
       live_demo: 'Ver Demo',
+      click_more: 'Haz clic para ver más',
 
       // Skills
       skills_title: 'Mis Habilidades',

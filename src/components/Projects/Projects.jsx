@@ -7,33 +7,33 @@ import ProjectModal from './ProjectModal';
 // Importa tus imágenes de proyectos
 import proj1 from '../../assets/p-marvel.jpg';
 import proj2 from '../../assets/p-hairhub.jpg';
-import proj3 from '../../assets/proj3.jpg';
+// import proj3 from '../../assets/proj3.jpg';
 
 const projectsData = [
   {
     id: 1,
-    title: 'Buscardor de personajes Marvel',
-    description: 'Proyecto realizado con React, Tailwind CSS y la API de Marvel. Permite buscar personajes, ver detalles y explorar cómics relacionados. Incluye paginación y diseño responsivo.',
+    titleKey: 'project1_title',
+    descriptionKey: 'project1_description',
     image: proj1,
     github: 'https://github.com/mateoPosada82231/marvel',
     live: 'https://github.com',
   },
   {
     id: 2,
-    title: 'Hair Hub',
-    description: 'desarrollo del frontend de un proyecto de peluquería en línea que permite a los usuarios reservar citas, ver estilos de cabello y obtener recomendaciones personalizadas. Desarrollado con React y Firebase.',
+    titleKey: 'project2_title',
+    descriptionKey: 'project2_description',
     image: proj2,
-    github: 'https://github.com/mateoPosada82231/hairhub',
-    live: 'https://hairhub.com',
+    github: 'https://github.com/mateoPosada82231/car-dealership',
+    live: 'https://cardealership.com',
   },
-  {
-    id: 3,
-    title: 'Project 3',
-    description: 'project3_description',
-    image: proj3,
-    github: 'https://github.com',
-    live: 'https://github.com',
-  },
+  // {
+  //   id: 3,
+  //   titleKey: 'project3_title',
+  //   descriptionKey: 'project3_description',
+  //   image: proj3,
+  //   github: 'https://github.com',
+  //   live: 'https://github.com',
+  // },
 ];
 
 // Variantes para la animación de entrada escalonada
@@ -42,7 +42,7 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2, // Retraso entre cada proyecto
+      staggerChildren: 0.2,
       delayChildren: 0.3,
     },
   },
@@ -55,7 +55,7 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: [0.25, 0.46, 0.45, 0.94], // Easing personalizado para suavidad
+      ease: [0.25, 0.46, 0.45, 0.94],
     },
   },
 };
@@ -101,20 +101,20 @@ const Projects = () => {
                 key={project.id}
                 className="carousel-item"
                 variants={itemVariants}
-                whileHover={{ y: -10, scale: 1.02 }} // Hover sutil: elevación y escalado mínimo
+                whileHover={{ y: -10, scale: 1.02 }}
                 transition={{ duration: 0.3, ease: 'easeOut' }}
                 onClick={() => openModal(project)}
               >
                 <div className="project-content-wrapper">
                   <motion.img
                     src={project.image}
-                    alt={project.title}
-                    whileHover={{ scale: 1.05 }} // Parallax sutil en la imagen
+                    alt={t(project.titleKey)}
+                    whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
                   />
                   <div className="project-overlay">
-                    <h3>{project.title}</h3>
-                    <p>Haz clic para ver más</p>
+                    <h3>{t(project.titleKey)}</h3>
+                    <p>{t('click_more')}</p>
                   </div>
                 </div>
               </motion.div>
