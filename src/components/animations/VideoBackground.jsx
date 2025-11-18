@@ -1,11 +1,12 @@
 import React from 'react';
 import { useTheme } from '../../context/ThemeContext';
 import './VideoBackground.css';
-// Importa el video directamente
-import stormVideo from '../../assets/videos/storm_background.mp4';
 
 const VideoBackground = () => {
   const { theme } = useTheme();
+
+  // Obtener el base URL de Vite
+  const baseUrl = import.meta.env.BASE_URL;
 
   return (
     <div className="video-background-container">
@@ -18,7 +19,7 @@ const VideoBackground = () => {
             playsInline
             className="background-video"
           >
-            <source src={stormVideo} type="video/mp4" />
+            <source src={`${baseUrl}videos/storm_background.mp4`} type="video/mp4" />
             Tu navegador no soporta el tag de video.
           </video>
           <div className="video-overlay"></div>
