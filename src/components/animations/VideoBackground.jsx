@@ -16,7 +16,8 @@ const VideoBackground = () => {
             playsInline
             className="background-video"
           >
-            <source src="/videos/storm_background.mp4" type="video/mp4" />
+            {/* Cambiamos la ruta para que funcione con el base de Vite */}
+            <source src={`${import.meta.env.BASE_URL}videos/storm_background.mp4`} type="video/mp4" />
             Tu navegador no soporta el tag de video.
           </video>
           <div className="video-overlay"></div>
