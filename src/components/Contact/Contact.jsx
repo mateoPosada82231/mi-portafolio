@@ -69,7 +69,7 @@ const Contact = () => {
             </a>
           </div>
         </div>
-        <div className="contact-form">
+        <div className="contact-form" style={{ display: 'none' }}>
           <form ref={form} onSubmit={sendEmail}>
             <input 
               type="text" 
