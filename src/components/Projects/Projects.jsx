@@ -1,39 +1,66 @@
-import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
-import './Projects.css';
-import ProjectModal from './ProjectModal';
+import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
+import "./Projects.css";
+import ProjectModal from "./ProjectModal";
 
 // Importa tus imágenes de proyectos
-import proj1 from '../../assets/p-marvel.jpg';
-import proj2 from '../../assets/p-hairhub.jpg';
-// import proj3 from '../../assets/proj3.jpg';
+import proj1 from "../../assets/p-marvel.jpg";
+import proj2 from "../../assets/p-hairhub.jpg";
+import proj3 from "../../assets/p-ahorcado.jpg";
+import proj4 from "../../assets/p-bookhub.jpg";
+import proj5 from "../../assets/p-huffman.jpg";
+import proj6 from "../../assets/p-redsocial.jpg";
 
 const projectsData = [
   {
     id: 1,
-    titleKey: 'project1_title',
-    descriptionKey: 'project1_description',
+    titleKey: "project1_title",
+    descriptionKey: "project1_description",
     image: proj1,
-    github: 'https://github.com/mateoPosada82231/marvel',
-    live: 'https://github.com',
+    github: "https://github.com/mateoPosada82231/marvel",
+    live: "https://github.com/mateoPosada82231/marvel",
   },
   {
     id: 2,
-    titleKey: 'project2_title',
-    descriptionKey: 'project2_description',
+    titleKey: "project2_title",
+    descriptionKey: "project2_description",
     image: proj2,
-    github: 'https://github.com/mateoPosada82231/car-dealership',
-    live: 'https://cardealership.com',
+    github: "https://github.com/mateoPosada82231/car-dealership",
+    live: "https://github.com/mateoPosada82231/car-dealership",
   },
-  // {
-  //   id: 3,
-  //   titleKey: 'project3_title',
-  //   descriptionKey: 'project3_description',
-  //   image: proj3,
-  //   github: 'https://github.com',
-  //   live: 'https://github.com',
-  // },
+  {
+    id: 3,
+    titleKey: "project3_title",
+    descriptionKey: "project3_description",
+    image: proj3,
+    github: "https://github.com/mateoPosada82231/Ahorcado-ResberryPi-Qemu",
+    live: "https://github.com/mateoPosada82231/Ahorcado-ResberryPi-Qemu",
+  },
+  {
+    id: 4,
+    titleKey: "project4_title",
+    descriptionKey: "project4_description",
+    image: proj4,
+    github: "https://github.com/mateoPosada82231/BookHub",
+    live: "https://github.com/mateoPosada82231/BookHub",
+  },
+  {
+    id: 5,
+    titleKey: "project5_title",
+    descriptionKey: "project5_description",
+    image: proj5,
+    github: "https://github.com/mateoPosada82231/compresor-huffman",
+    live: "https://github.com/mateoPosada82231/compresor-huffman",
+  },
+  {
+    id: 6,
+    titleKey: "project6_title",
+    descriptionKey: "project6_description",
+    image: proj6,
+    github: "https://github.com/mateoPosada82231/poliglota-postgres-neo",
+    live: "https://github.com/mateoPosada82231/poliglota-postgres-neo",
+  },
 ];
 
 // Variantes para la animación de entrada escalonada
@@ -70,7 +97,10 @@ const Projects = () => {
   };
 
   const prevProject = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + projectsData.length) % projectsData.length);
+    setCurrentIndex(
+      (prevIndex) =>
+        (prevIndex - 1 + projectsData.length) % projectsData.length,
+    );
   };
 
   const openModal = (project) => {
@@ -85,9 +115,11 @@ const Projects = () => {
 
   return (
     <section id="projects" className="projects-section">
-      <h2 className="section-title">{t('projects_title')}</h2>
+      <h2 className="section-title">{t("projects_title")}</h2>
       <div className="carousel-container">
-        <button onClick={prevProject} className="carousel-arrow prev-arrow">‹</button>
+        <button onClick={prevProject} className="carousel-arrow prev-arrow">
+          ‹
+        </button>
         <motion.div
           className="carousel-track-container"
           variants={containerVariants}
@@ -95,14 +127,17 @@ const Projects = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <div className="carousel-track" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+          <div
+            className="carousel-track"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
             {projectsData.map((project) => (
               <motion.div
                 key={project.id}
                 className="carousel-item"
                 variants={itemVariants}
                 whileHover={{ y: -10, scale: 1.02 }}
-                transition={{ duration: 0.3, ease: 'easeOut' }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
                 onClick={() => openModal(project)}
               >
                 <div className="project-content-wrapper">
@@ -114,14 +149,16 @@ const Projects = () => {
                   />
                   <div className="project-overlay">
                     <h3>{t(project.titleKey)}</h3>
-                    <p>{t('click_more')}</p>
+                    <p>{t("click_more")}</p>
                   </div>
                 </div>
               </motion.div>
             ))}
           </div>
         </motion.div>
-        <button onClick={nextProject} className="carousel-arrow next-arrow">›</button>
+        <button onClick={nextProject} className="carousel-arrow next-arrow">
+          ›
+        </button>
       </div>
       <div className="progress-bar-container">
         <div className="progress-bar" style={{ width: `${progress}%` }}></div>
