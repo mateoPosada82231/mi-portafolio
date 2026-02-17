@@ -1,22 +1,28 @@
-import React from 'react';
-import './Skills.css';
+import React from "react";
+import { useTranslation } from "react-i18next";
+import "./Skills.css";
 
 const Skill = ({ name, level, logo, color }) => {
+  const { t } = useTranslation();
   const radius = 50;
   const circumference = 2 * Math.PI * radius;
   const offset = circumference - (level / 100) * circumference;
 
   const getLevelText = (level) => {
-    if (level < 60) return 'Aprendiendo';
-    if (level < 85) return 'Intermedio';
-    return 'Avanzado';
+    if (level < 60) return t("level_low");
+    if (level < 85) return t("level_intermediate");
+    return t("level_high");
   };
 
   return (
-    // Aquí está el cambio principal: aplicamos el color como una variable CSS
-    <div className="skill-item" style={{ '--skill-color': color }}>
+    <div className="skill-item" style={{ "--skill-color": color }}>
       <div className="skill-progress-container">
-        <svg className="skill-progress-ring" width="120" height="120">
+        <svg
+          className="skill-progress-ring"
+          viewBox="0 0 120 120"
+          width="100%"
+          height="100%"
+        >
           <circle
             className="skill-progress-ring__circle-bg"
             strokeWidth="10"
@@ -35,7 +41,6 @@ const Skill = ({ name, level, logo, color }) => {
             style={{
               strokeDasharray: circumference,
               strokeDashoffset: offset,
-              // Ya no necesitamos el 'stroke' en línea aquí
             }}
           />
         </svg>
