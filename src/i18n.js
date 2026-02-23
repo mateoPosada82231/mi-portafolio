@@ -52,6 +52,53 @@ const resources = {
       level_intermediate: "Intermediate",
       level_high: "Advanced",
 
+      // Certificates (EN)
+      certificates: "Certificates",
+      certificates_title: "My Certificates",
+      cert_download: "Download PDF",
+      cert_issued_by: "Issued by",
+      cert_date: "Date",
+
+      // 1
+      cert1_title: "Linux Essentials",
+      cert1_issuer: "Cisco Networking Academy / NDG",
+      cert1_date: "Nov 2025",
+
+      // 2
+      cert2_title: "MongoDB for SQL Professionals",
+      cert2_issuer: "MongoDB, Inc.",
+      cert2_date: "Aug 2025",
+
+      // 3
+      cert3_title: "Cloud Computing Fundamentals",
+      cert3_issuer: "IBM",
+      cert3_date: "Jan 2026",
+
+      // 4
+      cert4_title: "Enterprise Design Thinking Practitioner",
+      cert4_issuer: "IBM",
+      cert4_date: "Dec 2025",
+
+      // 5
+      cert5_title: "Enterprise Design Thinking Co-Creator",
+      cert5_issuer: "IBM",
+      cert5_date: "Dec 2025",
+
+      // 6
+      cert6_title: "Enterprise Design Thinking Team Essentials for AI",
+      cert6_issuer: "IBM",
+      cert6_date: "Jan 2026",
+
+      // 7
+      cert7_title: "English A2",
+      cert7_issuer: "Speexx",
+      cert7_date: "Jan 2026",
+
+      // 8
+      cert8_title: "Software Testing with Generative AI",
+      cert8_issuer: "simplilearn",
+      cert8_date: "Feb 2026",
+
       // Contact
       contact_title: "Get in Touch",
       contact_info_title: "Let's Connect!",
@@ -112,6 +159,53 @@ const resources = {
       level_low: "Aprendiendo",
       level_intermediate: "Intermedio",
       level_high: "Avanzado",
+
+      // Certificates (ES)
+      certificates: "Certificados",
+      certificates_title: "Mis Certificados",
+      cert_download: "Descargar PDF",
+      cert_issued_by: "Emitido por",
+      cert_date: "Fecha",
+
+      // 1
+      cert1_title: "Linux Essentials",
+      cert1_issuer: "Cisco Networking Academy / NDG",
+      cert1_date: "Nov 2025",
+
+      // 2
+      cert2_title: "MongoDB for SQL Professionals",
+      cert2_issuer: "MongoDB, Inc.",
+      cert2_date: "Ago 2025",
+
+      // 3
+      cert3_title: "Cloud Computing Fundamentals",
+      cert3_issuer: "IBM SkillsBuild",
+      cert3_date: "Ene 2026",
+
+      // 4
+      cert4_title: "Enterprise Design Thinking Practitioner",
+      cert4_issuer: "IBM",
+      cert4_date: "Dic 2025",
+
+      // 5
+      cert5_title: "Enterprise Design Thinking Co-Creator",
+      cert5_issuer: "IBM",
+      cert5_date: "Dic 2025",
+
+      // 6
+      cert6_title: "Enterprise Design Thinking Team Essentials for AI",
+      cert6_issuer: "IBM",
+      cert6_date: "Ene 2026",
+
+      // 7
+      cert7_title: "English A2",
+      cert7_issuer: "Speexx",
+      cert7_date: "Ene 2026",
+
+      // 8
+      cert8_title: "Software Testing with Generative AI",
+      cert8_issuer: "simplilearn",
+      cert8_date: "Feb 2026",
 
       // Contact
       contact_title: "Ponte en Contacto",

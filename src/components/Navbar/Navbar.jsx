@@ -58,6 +58,11 @@ const Navbar = ({ videoEnabled, toggleVideo }) => {
             </a>
           </li>
           <li className="nav-item">
+            <a href="#certificates" className="nav-links" onClick={closeMenu}>
+              {t("certificates")}
+            </a>
+          </li>
+          <li className="nav-item">
             <a href="#contact" className="nav-links" onClick={closeMenu}>
               {t("contact")}
             </a>
