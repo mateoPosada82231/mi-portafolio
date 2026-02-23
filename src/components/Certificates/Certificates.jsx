@@ -13,7 +13,7 @@ const certificatesData = [
     titleKey: "cert1_title",
     issuerKey: "cert1_issuer",
     dateKey: "cert1_date",
-    pdfUrl: `${base}public/certificados/LinuxEssentialsUpdate20251118-31-psud9f.pdf`,
+    pdfUrl: `${base}certificados/Linux Essentials.pdf`,
     color: "#054ADA",
   },
   {
@@ -21,7 +21,7 @@ const certificatesData = [
     titleKey: "cert2_title",
     issuerKey: "cert2_issuer",
     dateKey: "cert2_date",
-    pdfUrl: `${base}public/certificados/IBMDesign20251211-32-19py9l.pdf`,
+    pdfUrl: `${base}certificados/MongoDB for SQL Professionals.pdf`,
     color: "#BE95FF",
   },
   {
@@ -29,7 +29,7 @@ const certificatesData = [
     titleKey: "cert3_title",
     issuerKey: "cert3_issuer",
     dateKey: "cert3_date",
-    pdfUrl: `${base}public/certificados/IBMDesign20251215-31-43xc9f.pdf`,
+    pdfUrl: `${base}certificados/Cloud Computing Fundamentals.pdf`,
     color: "#08BDBA",
   },
   {
@@ -37,7 +37,7 @@ const certificatesData = [
     titleKey: "cert4_title",
     issuerKey: "cert4_issuer",
     dateKey: "cert4_date",
-    pdfUrl: `${base}public/certificados/IBMDesign20260105-34-qbenh5.pdf`,
+    pdfUrl: `${base}certificados/Artificial Intelligence Fundamentals.pdf`,
     color: "#FF7EB6",
   },
   {
@@ -45,7 +45,7 @@ const certificatesData = [
     titleKey: "cert5_title",
     issuerKey: "cert5_issuer",
     dateKey: "cert5_date",
-    pdfUrl: `${base}public/certificados/Certificado_mateo-posada-montoya.pdf`,
+    pdfUrl: `${base}certificados/Backend Development.pdf`,
     color: "#F7DF1E",
   },
   {
@@ -53,7 +53,7 @@ const certificatesData = [
     titleKey: "cert6_title",
     issuerKey: "cert6_issuer",
     dateKey: "cert6_date",
-    pdfUrl: `${base}public/certificados/certificate A2.pdf`,
+    pdfUrl: `${base}certificados/Data Fundamentals.pdf`,
     color: "#4CAF50",
   },
   {
@@ -61,7 +61,7 @@ const certificatesData = [
     titleKey: "cert7_title",
     issuerKey: "cert7_issuer",
     dateKey: "cert7_date",
-    pdfUrl: `${base}public/certificados/9838227_10131642_1770940533433.pdf`,
+    pdfUrl: `${base}certificados/certificate A2.pdf`,
     color: "#FF6B6B",
   },
   {
@@ -69,7 +69,7 @@ const certificatesData = [
     titleKey: "cert8_title",
     issuerKey: "cert8_issuer",
     dateKey: "cert8_date",
-    pdfUrl: `${base}public/certificados/mateo-posada-montoya-b79964e1-aff4-4d83-a30a-c80dfd88f145-certificate.pdf`,
+    pdfUrl: `${base}certificados/Software Testing with Generative AI.pdf`,
     color: "#61DAFB",
   },
 ];

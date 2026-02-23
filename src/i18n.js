@@ -56,6 +56,8 @@ const resources = {
       certificates: "Certificates",
       certificates_title: "My Certificates",
       cert_download: "Download PDF",
+      cert_open_pdf: "Open PDF",
+      cert_pdf_fallback: "PDF preview not available on this device.",
       cert_issued_by: "Issued by",
       cert_date: "Date",
 
@@ -75,17 +77,17 @@ const resources = {
       cert3_date: "Jan 2026",
 
       // 4
-      cert4_title: "Enterprise Design Thinking Practitioner",
+      cert4_title: "Artificial Intelligence Fundamentals",
       cert4_issuer: "IBM",
       cert4_date: "Dec 2025",
 
       // 5
-      cert5_title: "Enterprise Design Thinking Co-Creator",
-      cert5_issuer: "IBM",
+      cert5_title: "Backend Development",
+      cert5_issuer: "Nodo - Eafit",
       cert5_date: "Dec 2025",
 
       // 6
-      cert6_title: "Enterprise Design Thinking Team Essentials for AI",
+      cert6_title: "Data Fundamentals",
       cert6_issuer: "IBM",
       cert6_date: "Jan 2026",
 
@@ -96,7 +98,7 @@ const resources = {
 
       // 8
       cert8_title: "Software Testing with Generative AI",
-      cert8_issuer: "simplilearn",
+      cert8_issuer: "Simplilearn",
       cert8_date: "Feb 2026",
 
       // Contact
@@ -164,6 +166,8 @@ const resources = {
       certificates: "Certificados",
       certificates_title: "Mis Certificados",
       cert_download: "Descargar PDF",
+      cert_open_pdf: "Abrir PDF",
+      cert_pdf_fallback: "Vista previa no disponible en este dispositivo.",
       cert_issued_by: "Emitido por",
       cert_date: "Fecha",
 
@@ -179,23 +183,23 @@ const resources = {
 
       // 3
       cert3_title: "Cloud Computing Fundamentals",
-      cert3_issuer: "IBM SkillsBuild",
+      cert3_issuer: "IBM",
       cert3_date: "Ene 2026",
 
       // 4
-      cert4_title: "Enterprise Design Thinking Practitioner",
+      cert4_title: "Artificial Intelligence Fundamentals",
       cert4_issuer: "IBM",
       cert4_date: "Dic 2025",
 
       // 5
-      cert5_title: "Enterprise Design Thinking Co-Creator",
-      cert5_issuer: "IBM",
+      cert5_title: "Backend Development",
+      cert5_issuer: "Nodo - Eafit",
       cert5_date: "Dic 2025",
 
       // 6
-      cert6_title: "Enterprise Design Thinking Team Essentials for AI",
+      cert6_title: "Data Fundamentals",
       cert6_issuer: "IBM",
-      cert6_date: "Ene 2026",
+      cert6_date: "Dic 2025",
 
       // 7
       cert7_title: "English A2",
@@ -204,7 +208,7 @@ const resources = {
 
       // 8
       cert8_title: "Software Testing with Generative AI",
-      cert8_issuer: "simplilearn",
+      cert8_issuer: "Simplilearn",
       cert8_date: "Feb 2026",
 
       // Contact
