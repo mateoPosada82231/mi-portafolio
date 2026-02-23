@@ -16,9 +16,9 @@ import sqlLogo from "../../assets/mysql-logo-pure.svg";
 import postgresLogo from "../../assets/postgresql.svg";
 import mongoLogo from "../../assets/mongodb-icon-1.svg";
 import springLogo from "../../assets/spring-boot.svg";
-import linux from "../../assets/linux.svg";
-import typescript from "../../assets/typescript.svg";
-import docker from "../../assets/docker.svg";
+import linux from "../../assets/Linux.svg";
+import typescript from "../../assets/TypeScript.svg";
+import docker from "../../assets/Docker.svg";
 
 const skillsData = [
   { name: "React", level: 90, logo: reactLogo, color: "#61DAFB" },
