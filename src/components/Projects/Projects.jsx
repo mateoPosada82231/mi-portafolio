@@ -61,6 +61,14 @@ const projectsData = [
     github: "https://github.com/mateoPosada82231/poliglota-postgres-neo",
     live: "https://github.com/mateoPosada82231/poliglota-postgres-neo",
   },
+  {
+    id: 7,
+    titleKey: "project7_title",
+    descriptionKey: "project7_description",
+    image: null, // Puedes agregar una imagen luego
+    github: "https://github.com/mateoPosada82231/reto-tecnico-nodo-nodo404",
+    live: "https://github.com/mateoPosada82231/reto-tecnico-nodo-nodo404",
+  },
 ];
 
 // Variantes para la animación de entrada escalonada

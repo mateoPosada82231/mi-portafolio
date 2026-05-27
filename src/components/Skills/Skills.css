@@ -45,7 +45,11 @@
 }
 
 .skill-progress-ring__circle-bg {
-  stroke: #334155; /* Color de fondo para el círculo */
+  stroke: #334155;
+}
+
+[data-theme="light"] .skill-progress-ring__circle-bg {
+  stroke: #cbd5e1;
 }
 
 .skill-progress-ring__circle {

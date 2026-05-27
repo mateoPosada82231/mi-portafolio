@@ -7,6 +7,7 @@ import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import Skills from "./components/Skills/Skills";
 import Certificates from "./components/Certificates/Certificates";
+import Studies from "./components/Studies/Studies";
 import Contact from "./components/Contact/Contact";
 import AnimatedSection from "./components/animations/AnimatedSection";
 import VideoBackground from "./components/animations/VideoBackground";
@@ -34,6 +35,9 @@ function App() {
         </AnimatedSection>
         <AnimatedSection>
           <Skills />
+        </AnimatedSection>
+        <AnimatedSection>
+          <Studies />
         </AnimatedSection>
         <AnimatedSection>
           <Certificates />
