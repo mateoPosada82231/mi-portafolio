@@ -129,6 +129,10 @@ const resources = {
       cert8_issuer: "Simplilearn",
       cert8_date: "Feb 2026",
 
+      // CV
+      cv: "CV",
+      cv_download: "Download CV",
+
       // Contact
       contact_title: "Get in Touch",
       contact_info_title: "Let's Connect!",
@@ -268,6 +272,10 @@ const resources = {
       cert8_title: "Software Testing with Generative AI",
       cert8_issuer: "Simplilearn",
       cert8_date: "Feb 2026",
+
+      // CV
+      cv: "Hoja de Vida",
+      cv_download: "Descargar Hoja de Vida",
 
       // Contact
       contact_title: "Ponte en Contacto",
