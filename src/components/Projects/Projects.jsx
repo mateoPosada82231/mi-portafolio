@@ -11,15 +11,16 @@ import proj3 from "../../assets/p-ahorcado.jpg";
 import proj4 from "../../assets/p-bookhub.jpg";
 import proj5 from "../../assets/p-huffman.jpg";
 import proj6 from "../../assets/p-redsocial.jpg";
+import proj7 from "../../assets/p-reto-tecnico.jpg";
 
 const projectsData = [
   {
     id: 1,
-    titleKey: "project1_title",
-    descriptionKey: "project1_description",
-    image: proj1,
-    github: "https://github.com/mateoPosada82231/marvel",
-    live: "https://github.com/mateoPosada82231/marvel",
+    titleKey: "project7_title",
+    descriptionKey: "project7_description",
+    image: proj7,
+    github: "https://github.com/mateoPosada82231/reto-tecnico-nodo-nodo404",
+    live: "https://github.com/mateoPosada82231/reto-tecnico-nodo-nodo404",
   },
   {
     id: 2,
@@ -63,11 +64,11 @@ const projectsData = [
   },
   {
     id: 7,
-    titleKey: "project7_title",
-    descriptionKey: "project7_description",
-    image: null, // Puedes agregar una imagen luego
-    github: "https://github.com/mateoPosada82231/reto-tecnico-nodo-nodo404",
-    live: "https://github.com/mateoPosada82231/reto-tecnico-nodo-nodo404",
+    titleKey: "project1_title",
+    descriptionKey: "project1_description",
+    image: proj1,
+    github: "https://github.com/mateoPosada82231/marvel",
+    live: "https://github.com/mateoPosada82231/marvel",
   },
 ];
 
