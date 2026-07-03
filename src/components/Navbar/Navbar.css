@@ -112,10 +112,6 @@
   color: var(--primary-color);
 }
 
-.nav-links:hover::after {
-  width: 60%;
-}
-
 .nav-item-lang {
   display: flex;
   align-items: center;
@@ -296,11 +292,31 @@
       transform 0.35s ease;
   }
 
-  .nav-menu.active .nav-item:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
-  .nav-menu.active .nav-item:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.15s; }
-  .nav-menu.active .nav-item:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.2s; }
-  .nav-menu.active .nav-item:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.25s; }
-  .nav-menu.active .nav-item:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.3s; }
+  .nav-menu.active .nav-item:nth-child(1) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.1s;
+  }
+  .nav-menu.active .nav-item:nth-child(2) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.15s;
+  }
+  .nav-menu.active .nav-item:nth-child(3) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+  }
+  .nav-menu.active .nav-item:nth-child(4) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.25s;
+  }
+  .nav-menu.active .nav-item:nth-child(5) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
+  }
 
   .nav-links {
     text-align: center;
