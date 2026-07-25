@@ -56,9 +56,6 @@ const resources = {
 
       // Skills
       skills_title: "My Skills",
-      level_low: "Learning",
-      level_intermediate: "Intermediate",
-      level_high: "Advanced",
 
       // Studies (EN)
       studies_title: "Studies",
@@ -200,9 +197,6 @@ const resources = {
 
       // Skills
       skills_title: "Mis Habilidades",
-      level_low: "Aprendiendo",
-      level_intermediate: "Intermedio",
-      level_high: "Avanzado",
 
       // Studies (ES)
       studies_title: "Estudios",
