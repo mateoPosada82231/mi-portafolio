@@ -64,11 +64,13 @@ const resources = {
       studies_degree_title: "BSc. in Computer Engineering",
       studies_degree_institution: "Politécnico Colombiano Jaime Isaza Cadavid",
       studies_degree_period: "2022 - Present",
-      studies_degree_desc: "Currently in the 7th semester. Solid foundation in software engineering, algorithms, data structures, systems design, and computer architecture. Passionate about applying theoretical knowledge to build real-world full stack solutions.",
+      studies_degree_desc:
+        "Currently in the 7th semester. Solid foundation in software engineering, algorithms, data structures, systems design, and computer architecture. Passionate about applying theoretical knowledge to build real-world full stack solutions.",
       studies_bootcamp_title: "Web Development Bootcamp",
       studies_bootcamp_institution: "Nodo - EAFIT",
       studies_bootcamp_period: "2025 - Present",
-      studies_bootcamp_desc: "Intensive full stack training covering both backend (APIs, databases, authentication) and frontend (React, modern frameworks). Emphasis on teamwork, agile methodologies, and real-world project-based learning.",
+      studies_bootcamp_desc:
+        "Intensive full stack training covering both backend (APIs, databases, authentication) and frontend (React, modern frameworks). Emphasis on teamwork, agile methodologies, and real-world project-based learning.",
       studies_tag_software: "Software Eng.",
       studies_tag_algorithms: "Algorithms",
       studies_tag_databases: "Databases",
@@ -117,7 +119,7 @@ const resources = {
       cert6_date: "Jan 2026",
 
       // 7
-      cert7_title: "English A2",
+      cert7_title: "English B1",
       cert7_issuer: "Speexx",
       cert7_date: "Jan 2026",
 
@@ -205,11 +207,13 @@ const resources = {
       studies_degree_title: "Ingeniería Informática",
       studies_degree_institution: "Politécnico Colombiano Jaime Isaza Cadavid",
       studies_degree_period: "2022 - Presente",
-      studies_degree_desc: "Actualmente en 7º semestre. Sólida formación en ingeniería de software, algoritmos, estructuras de datos, diseño de sistemas y arquitectura de computadores. Apasionado por aplicar conocimientos teóricos para construir soluciones full stack del mundo real.",
+      studies_degree_desc:
+        "Actualmente en 7º semestre. Sólida formación en ingeniería de software, algoritmos, estructuras de datos, diseño de sistemas y arquitectura de computadores. Apasionado por aplicar conocimientos teóricos para construir soluciones full stack del mundo real.",
       studies_bootcamp_title: "Bootcamp Desarrollo Web",
       studies_bootcamp_institution: "Nodo - EAFIT",
       studies_bootcamp_period: "2025 - Presente",
-      studies_bootcamp_desc: "Formación full stack intensiva que cubre tanto backend (APIs, bases de datos, autenticación) como frontend (React, frameworks modernos). Énfasis en trabajo en equipo, metodologías ágiles y aprendizaje basado en proyectos reales.",
+      studies_bootcamp_desc:
+        "Formación full stack intensiva que cubre tanto backend (APIs, bases de datos, autenticación) como frontend (React, frameworks modernos). Énfasis en trabajo en equipo, metodologías ágiles y aprendizaje basado en proyectos reales.",
       studies_tag_software: "Ing. Software",
       studies_tag_algorithms: "Algoritmos",
       studies_tag_databases: "Bases de Datos",
@@ -258,7 +262,7 @@ const resources = {
       cert6_date: "Dic 2025",
 
       // 7
-      cert7_title: "English A2",
+      cert7_title: "English B1",
       cert7_issuer: "Speexx",
       cert7_date: "Ene 2026",
 

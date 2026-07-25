@@ -61,7 +61,7 @@ const certificatesData = [
     titleKey: "cert7_title",
     issuerKey: "cert7_issuer",
     dateKey: "cert7_date",
-    pdfUrl: `${base}certificados/certificate A2.pdf`,
+    pdfUrl: `${base}certificados/certificate B1.pdf`,
     color: "#FF6B6B",
   },
   {
