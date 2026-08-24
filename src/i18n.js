@@ -121,7 +121,7 @@ const resources = {
       // 7
       cert7_title: "English B1",
       cert7_issuer: "Speexx",
-      cert7_date: "Jan 2026",
+      cert7_date: "Jul 2026",
 
       // 8
       cert8_title: "Software Testing with Generative AI",
@@ -269,7 +269,7 @@ const resources = {
       // 7
       cert7_title: "English B1",
       cert7_issuer: "Speexx",
-      cert7_date: "Ene 2026",
+      cert7_date: "Jul 2026",
 
       // 8
       cert8_title: "Software Testing with Generative AI",
