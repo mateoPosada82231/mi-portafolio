@@ -14,13 +14,13 @@ import proj6 from "../../assets/p-redsocial.jpg";
 import proj7 from "../../assets/p-reto-tecnico.jpg";
 
 const projectsData = [
-  {
-    id: 1,
+{
+    id: 7,
     titleKey: "project7_title",
     descriptionKey: "project7_description",
     image: proj7,
-    github: "https://github.com/mateoPosada82231/reto-tecnico-nodo-nodo404",
-    live: "https://github.com/mateoPosada82231/reto-tecnico-nodo-nodo404",
+    github: "Front: https://github.com/mateoPosada82231/front-reto-tecnico-nodo404 | Back: https://github.com/mateoPosada82231/reto-tecnico-nodo-nodo404",
+    live: "https://nodo404.vercel.app",
   },
   {
     id: 2,

@@ -50,7 +50,7 @@ const resources = {
         "Social network (AmigosDB) with polyglot persistence using PostgreSQL and Neo4j. Includes automated migration between databases, Tkinter GUI, JSON backups, detailed reports, and post-migration integrity validation. Built with Python.",
       project7_title: "Electronic Arts Technical Challenge",
       project7_description:
-        "Full stack technical challenge for Electronic Arts. REST API built with Spring Boot and PostgreSQL for simulating expansion package management and purchase for the Sims game.",
+        "Full stack technical challenge for Electronic Arts. REST API built with Spring Boot and PostgreSQL, and a React frontend, for simulating management and purchase of expansion packs for The Sims. Developed during the NODO - EAFIT bootcamp. I served as team lead and moderator: task assignment, agile (SCRUM) methodology organizer, code reviewer, and developer. Note: The backend deployment enters hibernation when unused, so it takes 5-10 minutes to wake up upon first access.",
       live_demo: "Live Demo",
       click_more: "Click to see more",
 
@@ -128,6 +128,11 @@ const resources = {
       cert8_issuer: "Simplilearn",
       cert8_date: "Feb 2026",
 
+      // 9
+      cert9_title: "Frontend Development",
+      cert9_issuer: "Nodo - Eafit",
+      cert9_date: "Mar 2026",
+
       // CV
       cv: "CV",
       cv_download: "Download CV",
@@ -191,9 +196,9 @@ const resources = {
       project6_title: "Red Social Políglota",
       project6_description:
         "Red social (AmigosDB) con persistencia políglota usando PostgreSQL y Neo4j. Incluye migración automatizada entre bases de datos, interfaz gráfica con Tkinter, backups en JSON, reportes detallados y validación de integridad post-migración. Desarrollada en Python.",
-      project7_title: "Reto Técnico Electronic Arts",
+      project7_title: "Desafío Técnico Electronic Arts",
       project7_description:
-        "Reto técnico backend para Electronic Arts. API REST construida con Spring Boot y PostgreSQL para simular manejo y compra de paquetes de expasión para el juego de los sisms.",
+        "Desarrollado durante el bootcamp de NODO - EAFIT, consistió en una API REST con Spring Boot y PostgreSQL y un frontend React para simular el manejo y compra de paquetes de expansión para el juego Los Sims. Ocupé el rol de líder de equipo y moderador: asignación de tareas, organizador de metodología ágil (SCRUM), code reviewer y desarrollador.",
       live_demo: "Ver Demo",
       click_more: "Haz clic para ver más",
 
@@ -270,6 +275,11 @@ const resources = {
       cert8_title: "Software Testing with Generative AI",
       cert8_issuer: "Simplilearn",
       cert8_date: "Feb 2026",
+
+      // 9
+      cert9_title: "Desarrollo Frontend",
+      cert9_issuer: "Nodo - Eafit",
+      cert9_date: "Mar 2026",
 
       // CV
       cv: "Hoja de Vida",

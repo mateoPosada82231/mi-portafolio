@@ -72,6 +72,14 @@ const certificatesData = [
     pdfUrl: `${base}certificados/Software Testing with Generative AI.pdf`,
     color: "#61DAFB",
   },
+  {
+    id: 9,
+    titleKey: "cert9_title",
+    issuerKey: "cert9_issuer",
+    dateKey: "cert9_date",
+    pdfUrl: `${base}certificados/Frontend Development.pdf`,
+    color: "#F472B6",
+  },
 ];
 
 const containerVariants = {
