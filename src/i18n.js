@@ -133,6 +133,11 @@ const resources = {
       cert9_issuer: "Nodo - Eafit",
       cert9_date: "Mar 2026",
 
+      // 10
+      cert10_title: "Foundations of Prompt Engineering",
+      cert10_issuer: "AWS Training & Certification",
+      cert10_date: "Sep 2026",
+
       // CV
       cv: "CV",
       cv_download: "Download CV",
@@ -280,6 +285,11 @@ const resources = {
       cert9_title: "Desarrollo Frontend",
       cert9_issuer: "Nodo - Eafit",
       cert9_date: "Mar 2026",
+
+      // 10
+      cert10_title: "Foundations of Prompt Engineering",
+      cert10_issuer: "AWS Training & Certification",
+      cert10_date: "Sep 2026",
 
       // CV
       cv: "Hoja de Vida",
