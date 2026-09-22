@@ -138,6 +138,11 @@ const resources = {
       cert10_issuer: "AWS Training & Certification",
       cert10_date: "Sep 2026",
 
+      // 11
+      cert11_title: "Introduction to Data Science",
+      cert11_issuer: "Cisco Networking Academy",
+      cert11_date: "Sep 2026",
+
       // CV
       cv: "CV",
       cv_download: "Download CV",
@@ -290,6 +295,11 @@ const resources = {
       cert10_title: "Foundations of Prompt Engineering",
       cert10_issuer: "AWS Training & Certification",
       cert10_date: "Sep 2026",
+
+      // 11
+      cert11_title: "Introducción a la Ciencia de Datos",
+      cert11_issuer: "Cisco Networking Academy",
+      cert11_date: "Sep 2026",
 
       // CV
       cv: "Hoja de Vida",

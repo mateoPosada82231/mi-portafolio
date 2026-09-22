@@ -88,6 +88,14 @@ const certificatesData = [
     pdfUrl: `${base}certificados/Foundations of Prompt.pdf`,
     color: "#FF9900",
   },
+  {
+    id: 11,
+    titleKey: "cert11_title",
+    issuerKey: "cert11_issuer",
+    dateKey: "cert11_date",
+    pdfUrl: `${base}certificados/IntrotoDataScience.pdf`,
+    color: "#00BCD4",
+  },
 ];
 
 const containerVariants = {
