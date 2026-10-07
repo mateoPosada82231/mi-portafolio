@@ -5,7 +5,8 @@
 - Incluir mención clara de experiencia con backend, APIs REST y servicios en la nube.
 - Añadir un proyecto o sección dedicada a una API/backend desplegado, con detalles de tecnologías y arquitectura.
 - Agregar un enlace visible a un CV descargable o perfil profesional (LinkedIn/GitHub Pages/Netlify/Vercel).
-- Mejorar la descripción de proyectos para resaltar el alcance Full Stack y el uso de bases de datos.
+- Mejorar la descripción de proyectos para resaltar el alcance Full Stack y el uso de bases de datos
+
 
 ## Prioridad Media
 - Agregar un bloque de tecnologías/herramientas que muestre claramente frontend y backend: React, Node.js, Express, Spring Boot, PostgreSQL, MongoDB, Docker, etc.
